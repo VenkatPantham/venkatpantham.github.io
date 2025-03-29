@@ -1,16 +1,18 @@
 /* Default dark theme variables */
 :root {
   /* Modern color palette */
-  --primary-color: #7928ca;
-  --primary-gradient: linear-gradient(90deg, #7928ca, #ff0080);
-  --secondary-color: #0070f3;
-  --accent-color: #ff4d4d;
-  --dark-color: #121212;
-  --dark-secondary: #1e1e1e;
-  --light-color: #f7f7f7;
-  --success-color: #00d68f;
-  --warning-color: #ffc107;
-  --danger-color: #ff4d4d;
+  --primary-color: #ff6f61; /* Warm Coral */
+  --primary-gradient: linear-gradient(90deg, #ff6f61, #ffcc00);
+  --secondary-color: #1abc9c; /* Green-Teal */
+  --accent-color: #f39c12; /* Orange */
+  --dark-color: #101820;
+  --dark-secondary: #19232d;
+  --light-color: #ecf0f1;
+  --text-primary: #f5f5f5;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --bg-primary: #101820;
+  --bg-secondary: #19232d;
+  --shadow-glow: 0 0 20px rgba(255, 111, 97, 0.3);
 
   /* Text colors */
   --text-primary: #f4f4f4;
@@ -80,9 +82,15 @@
 /* Light theme variables */
 [data-theme="light"] {
   /* Text colors */
-  --text-primary: #212121;
+  --primary-color: #e74c3c;
+  --primary-gradient: linear-gradient(90deg, #e74c3c, #f39c12);
+  --secondary-color: #16a085;
+  --accent-color: #f1c40f;
+  --bg-primary: #fcfcfc;
+  --bg-secondary: #f1f1f1;
+  --text-primary: #1a1a1a;
   --text-secondary: rgba(0, 0, 0, 0.7);
-  --text-muted: rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 10px rgba(231, 76, 60, 0.2);
 
   /* Background colors */
   --bg-primary: #f8f9fa;
