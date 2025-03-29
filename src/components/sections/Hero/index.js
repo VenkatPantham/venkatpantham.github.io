@@ -100,7 +100,7 @@ const Hero = () => {
 
           <motion.div className="hero-btns" variants={item}>
             <a
-              href="/resume.pdf"
+              href={`${process.env.PUBLIC_URL}/resume.pdf`}
               className="btn secondary-btn"
               download="Venkat_Pantham_Resume.pdf"
               rel="noreferrer"
