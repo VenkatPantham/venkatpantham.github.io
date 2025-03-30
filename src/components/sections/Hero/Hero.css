@@ -8,12 +8,12 @@
   overflow: hidden;
   background: radial-gradient(
       circle at 80% 10%,
-      rgba(121, 40, 202, 0.08) 0%,
+      var(--overlay-primary) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 20% 90%,
-      rgba(0, 112, 243, 0.08) 0%,
+      var(--overlay-secondary) 0%,
       transparent 50%
     );
   scroll-margin-top: var(--header-height);
@@ -248,8 +248,8 @@
 
 .profile-circle {
   position: absolute;
-  width: 280px;
-  height: 280px;
+  width: 340px;
+  height: 340px;
   border-radius: 50%;
   overflow: hidden;
   top: 50%;

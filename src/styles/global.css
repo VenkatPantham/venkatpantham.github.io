@@ -28,12 +28,12 @@ body {
   color: var(--text-primary);
   background-image: radial-gradient(
       circle at 25% 15%,
-      rgba(121, 40, 202, 0.1) 0%,
+      var(--overlay-primary) 0%,
       transparent 40%
     ),
     radial-gradient(
       circle at 75% 75%,
-      rgba(0, 112, 243, 0.1) 0%,
+      var(--overlay-secondary) 0%,
       transparent 40%
     );
   background-attachment: fixed;
@@ -144,12 +144,12 @@ main {
   background-color: var(--bg-primary);
   background-image: radial-gradient(
       circle at 25% 15%,
-      rgba(121, 40, 202, 0.15) 0%,
+      var(--overlay-primary) 0%,
       transparent 40%
     ),
     radial-gradient(
       circle at 75% 75%,
-      rgba(0, 112, 243, 0.15) 0%,
+      var(--overlay-secondary) 0%,
       transparent 40%
     );
 }

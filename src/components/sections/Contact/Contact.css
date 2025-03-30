@@ -15,7 +15,7 @@
   height: 300px;
   background: radial-gradient(
     circle,
-    rgba(121, 40, 202, 0.15) 0%,
+    var(--overlay-primary) 0%,
     transparent 70%
   );
   filter: blur(40px);
@@ -32,7 +32,7 @@
   height: 250px;
   background: radial-gradient(
     circle,
-    rgba(0, 112, 243, 0.12) 0%,
+    var(--overlay-secondary) 0%,
     transparent 70%
   );
   filter: blur(40px);
@@ -133,7 +133,7 @@
 .social-links-contact a {
   width: 45px;
   height: 45px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--overlay-light);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,7 +143,7 @@
   transition: var(--transition-normal);
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: var(--border-thin);
 }
 
 .social-links-contact a::before {
@@ -240,8 +240,8 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(121, 40, 202, 0.2);
-  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px var(--overlay-primary);
+  background: var(--overlay-light);
 }
 
 .form-group:focus-within label {
@@ -295,7 +295,7 @@
 
 .submit-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 7px 20px rgba(121, 40, 202, 0.4);
+  box-shadow: 0 7px 20px var(--shadow-glow);
 }
 
 .submit-btn:hover::after {
@@ -355,7 +355,7 @@
 .send-another-btn {
   background: transparent;
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-hover);
   padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-full);
   font-size: 1rem;

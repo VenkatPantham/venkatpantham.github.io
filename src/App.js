@@ -13,7 +13,7 @@ import Footer from "./components/layout/Footer";
 
 // Create theme context
 export const ThemeContext = createContext({
-  theme: "dark",
+  theme: "light",
   toggleTheme: () => {},
 });
 
@@ -22,23 +22,18 @@ export const useTheme = () => useContext(ThemeContext);
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   // Theme toggle function
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
   };
 
   useEffect(() => {
-    // Check for saved theme preference in localStorage
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.setAttribute("data-theme", savedTheme);
-    }
+    // Set theme on mount
+    document.documentElement.setAttribute("data-theme", theme);
 
     // Simulate loading
     const timer = setTimeout(() => {
@@ -46,7 +41,7 @@ function App() {
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

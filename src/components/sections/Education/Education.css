@@ -16,7 +16,7 @@
   height: 300px;
   background: radial-gradient(
     circle,
-    rgba(0, 112, 243, 0.15) 0%,
+    var(--overlay-secondary) 0%,
     transparent 70%
   );
   filter: blur(40px);
@@ -33,7 +33,7 @@
   height: 250px;
   background: radial-gradient(
     circle,
-    rgba(255, 0, 128, 0.12) 0%,
+    var(--overlay-accent) 0%,
     transparent 70%
   );
   filter: blur(40px);
@@ -58,9 +58,10 @@
   width: 2px;
   background: linear-gradient(
     to bottom,
-    rgba(121, 40, 202, 0.5),
-    rgba(255, 0, 128, 0.5)
+    var(--primary-color),
+    var(--highlight-color)
   );
+  opacity: 50%;
   z-index: -1;
   display: none;
 }
@@ -109,18 +110,6 @@
   border-bottom: 1px solid var(--border-color);
   padding-bottom: var(--space-3);
   position: relative;
-}
-
-.education-header::after {
-  content: "\f19d";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 1.5rem;
-  color: var(--primary-color);
-  opacity: 0.3;
 }
 
 .education-header h3 {

@@ -19,7 +19,7 @@
   height: 400px;
   background: radial-gradient(
     circle,
-    rgba(121, 40, 202, 0.15) 0%,
+    var(--overlay-primary) 0%,
     transparent 70%
   );
   filter: blur(40px);
@@ -36,7 +36,7 @@
   height: 300px;
   background: radial-gradient(
     circle,
-    rgba(0, 112, 243, 0.1) 0%,
+    var(--overlay-secondary) 0%,
     transparent 70%
   );
   filter: blur(40px);
@@ -98,11 +98,11 @@
   width: 3px;
   background: linear-gradient(
     to bottom,
-    rgba(121, 40, 202, 0.1),
+    var(--overlay-primary),
     var(--primary-color),
-    rgba(121, 40, 202, 0.1)
+    var(--overlay-primary)
   );
-  box-shadow: 0 0 15px rgba(121, 40, 202, 0.2);
+  box-shadow: 0 0 15px var(--overlay-primary);
   transform: translateX(-50%);
   z-index: 1;
 }
