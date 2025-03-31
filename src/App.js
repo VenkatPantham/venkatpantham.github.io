@@ -10,6 +10,7 @@ import Projects from "./components/sections/Projects";
 import Education from "./components/sections/Education";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/layout/Footer";
+import SEOHelmet from "./components/SEO/Helmet";
 
 // Create theme context
 export const ThemeContext = createContext({
@@ -45,6 +46,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <SEOHelmet />
       <AnimatePresence>
         {loading ? (
           <motion.div
