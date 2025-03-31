@@ -132,6 +132,7 @@ const Contact = () => {
               href="https://github.com/venkatpantham"
               target="_blank"
               rel="noreferrer"
+              aria-label="Visit my GitHub profile"
             >
               <i className="fab fa-github"></i>
             </a>
@@ -139,6 +140,7 @@ const Contact = () => {
               href="https://linkedin.com/in/venkat-pantham"
               target="_blank"
               rel="noreferrer"
+              aria-label="Connect with me on LinkedIn"
             >
               <i className="fab fa-linkedin"></i>
             </a>
@@ -146,6 +148,7 @@ const Contact = () => {
               href="mailto:venkatpantham7@gmail.com"
               target="_blank"
               rel="noreferrer"
+              aria-label="Send me an email"
             >
               <i className="fas fa-envelope"></i>
             </a>

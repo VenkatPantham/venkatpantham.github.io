@@ -230,8 +230,11 @@ const Experience = () => {
                   e.stopPropagation();
                   toggleExpand(index);
                 }}
-                title={expandedId === index ? "Show less" : "Show more"}
-                aria-label={expandedId === index ? "Show less" : "Show more"}
+                aria-label={
+                  expandedId === index
+                    ? `Hide details for ${exp.position} at ${exp.company}`
+                    : `Show details for ${exp.position} at ${exp.company}`
+                }
               >
                 <i className="fas fa-chevron-down"></i>
               </div>

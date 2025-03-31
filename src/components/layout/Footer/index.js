@@ -58,7 +58,7 @@ const Footer = () => {
             href="https://github.com/venkatpantham"
             target="_blank"
             rel="noreferrer"
-            aria-label="GitHub"
+            aria-label="Visit my GitHub profile"
           >
             <i className="fab fa-github"></i>
           </a>
@@ -66,7 +66,7 @@ const Footer = () => {
             href="https://linkedin.com/in/venkat-pantham"
             target="_blank"
             rel="noreferrer"
-            aria-label="LinkedIn"
+            aria-label="Connect with me on LinkedIn"
           >
             <i className="fab fa-linkedin"></i>
           </a>
@@ -74,7 +74,7 @@ const Footer = () => {
             href="mailto:venkatpantham7@gmail.com"
             target="_blank"
             rel="noreferrer"
-            aria-label="Email"
+            aria-label="Send me an email"
           >
             <i className="fas fa-envelope"></i>
           </a>

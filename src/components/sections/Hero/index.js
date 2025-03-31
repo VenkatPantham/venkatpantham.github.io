@@ -114,21 +114,23 @@ const Hero = () => {
               href="https://github.com/venkatpantham"
               target="_blank"
               rel="noreferrer"
-              aria-label="GitHub Profile"
+              aria-label="Visit my GitHub profile"
             >
               <i className="fab fa-github"></i>
             </a>
             <a
-              href="https://linkedin.com/in/venkatpantham"
+              href="https://linkedin.com/in/venkat-pantham"
               target="_blank"
               rel="noreferrer"
-              aria-label="LinkedIn Profile"
+              aria-label="Connect with me on LinkedIn"
             >
               <i className="fab fa-linkedin"></i>
             </a>
             <a
               href="mailto:venkatpantham7@gmail.com"
-              aria-label="Email Contact"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Send me an email"
             >
               <i className="fas fa-envelope"></i>
             </a>
