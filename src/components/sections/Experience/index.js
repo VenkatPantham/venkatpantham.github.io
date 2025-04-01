@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, m as motion } from "framer-motion";
 import "./Experience.css";
 
 const Experience = () => {
@@ -98,183 +98,125 @@ const Experience = () => {
   ];
 
   const toggleExpand = (index) => {
-    // If already expanded, collapse it
-    if (expandedId === index) {
-      setExpandedId(null);
-    }
-    // If another item is expanded, collapse it first then expand the new one
-    else {
-      setExpandedId(index);
-    }
-  };
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
+    setExpandedId(expandedId === index ? null : index);
   };
 
   return (
     <div className="experience-container">
       <div className="section-title-container">
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          Work Experience
-        </motion.h2>
+        <h2 className="section-title">Work Experience</h2>
       </div>
-      <motion.p
-        className="section-subtitle"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        My professional journey
-      </motion.p>
+      <p className="section-subtitle">My professional journey</p>
 
-      <motion.div
-        className="experience-timeline"
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-      >
+      <div className="experience-timeline">
         {experiences.map((exp, index) => (
-          <motion.div
+          <div
             key={index}
             className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}
-            variants={item}
           >
             <div className="timeline-marker"></div>
-            <motion.div
-              className="timeline-date"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              {exp.period}
-            </motion.div>
-            <motion.div
-              className={`timeline-content ${
-                expandedId === index ? "expanded" : ""
-              }`}
-              transition={{ type: "spring", stiffness: 300 }}
-              onClick={() => toggleExpand(index)}
-            >
-              <div className="timeline-header">
-                <h3>{exp.position}</h3>
-                <div className="job-type-badge">
-                  <i className="fas fa-briefcase"></i> {exp.jobType}
-                </div>
-
-                <div className="company-wrapper">
-                  <div className="company-badge">
-                    <span>{exp.company}</span>
-                  </div>
-                  <div className="role-details">
-                    <span className="location">
-                      <i className="fas fa-map-marker-alt"></i> {exp.location}
-                    </span>
-                    <span className="duration">
-                      <i className="far fa-clock"></i> {exp.duration}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="summary-wrapper">
-                  <p className="job-summary">{exp.summary}</p>
-                  <div className="achievement-highlight">
-                    <i className="fas fa-trophy"></i>
-                    <span>{exp.keyPoint}</span>
-                  </div>
-
-                  <div className="tech-pills">
-                    {exp.technologies.slice(0, 5).map((tech, techIndex) => (
-                      <span key={techIndex} className="tech-pill">
-                        {tech}
-                      </span>
-                    ))}
-                    {exp.technologies.length > 5 && (
-                      <span className="tech-pill">
-                        +{exp.technologies.length - 5} more
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className="expand-indicator"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  toggleExpand(index);
-                }}
-                aria-label={
-                  expandedId === index
-                    ? `Hide details for ${exp.position} at ${exp.company}`
-                    : `Show details for ${exp.position} at ${exp.company}`
-                }
+            <div className="timeline-date">{exp.period}</div>
+            <LazyMotion features={domAnimation}>
+              <motion.div
+                className={`timeline-content ${
+                  expandedId === index ? "expanded" : ""
+                }`}
+                onClick={() => toggleExpand(index)}
               >
-                <i className="fas fa-chevron-down"></i>
-              </div>
+                <div className="timeline-header">
+                  <h3>{exp.position}</h3>
+                  <div className="job-type-badge">
+                    <i className="fas fa-briefcase"></i> {exp.jobType}
+                  </div>
 
-              <div className="timeline-body">
-                <div className="achievements">
-                  <h4>Key Achievements</h4>
-                  <div className="achievements-list">
-                    {exp.achievements.map((achievement, achIndex) => (
-                      <div className="achievement-item" key={achIndex}>
-                        {achievement}
-                      </div>
-                    ))}
+                  <div className="company-wrapper">
+                    <div className="company-badge">
+                      <span>{exp.company}</span>
+                    </div>
+                    <div className="role-details">
+                      <span className="location">
+                        <i className="fas fa-map-marker-alt"></i> {exp.location}
+                      </span>
+                      <span className="duration">
+                        <i className="far fa-clock"></i> {exp.duration}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="summary-wrapper">
+                    <p className="job-summary">{exp.summary}</p>
+                    <div className="achievement-highlight">
+                      <i className="fas fa-trophy"></i>
+                      <span>{exp.keyPoint}</span>
+                    </div>
+
+                    <div className="tech-pills">
+                      {exp.technologies.slice(0, 5).map((tech, techIndex) => (
+                        <span key={techIndex} className="tech-pill">
+                          {tech}
+                        </span>
+                      ))}
+                      {exp.technologies.length > 5 && (
+                        <span className="tech-pill">
+                          +{exp.technologies.length - 5} more
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
 
-                <div className="responsibilities">
-                  <h4>Responsibilities</h4>
-                  <ul>
-                    {exp.responsibilities.map((resp, respIndex) => (
-                      <li key={respIndex}>{resp}</li>
-                    ))}
-                  </ul>
+                <div
+                  className="expand-indicator"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleExpand(index);
+                  }}
+                  aria-label={
+                    expandedId === index
+                      ? `Hide details for ${exp.position} at ${exp.company}`
+                      : `Show details for ${exp.position} at ${exp.company}`
+                  }
+                >
+                  <i className="fas fa-chevron-down"></i>
                 </div>
 
-                <div className="tech-used">
-                  <h4>Technologies Used</h4>
-                  <div className="tech-grid">
-                    {exp.technologies.map((tech, techIndex) => (
-                      <div key={techIndex} className="tech-item">
-                        {tech}
-                      </div>
-                    ))}
+                <div className="timeline-body">
+                  <div className="achievements">
+                    <h4>Key Achievements</h4>
+                    <div className="achievements-list">
+                      {exp.achievements.map((achievement, achIndex) => (
+                        <div className="achievement-item" key={achIndex}>
+                          {achievement}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="responsibilities">
+                    <h4>Responsibilities</h4>
+                    <ul>
+                      {exp.responsibilities.map((resp, respIndex) => (
+                        <li key={respIndex}>{resp}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="tech-used">
+                    <h4>Technologies Used</h4>
+                    <div className="tech-grid">
+                      {exp.technologies.map((tech, techIndex) => (
+                        <div key={techIndex} className="tech-item">
+                          {tech}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          </motion.div>
+              </motion.div>
+            </LazyMotion>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };

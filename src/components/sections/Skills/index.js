@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, m as motion } from "framer-motion";
 import "./Skills.css";
 
 const Skills = () => {
@@ -63,64 +63,29 @@ const Skills = () => {
     },
   ];
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
-
   return (
     <div className="skills-container">
       <div className="section-title-container">
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          My Skills
-        </motion.h2>
+        <h2 className="section-title">My Skills</h2>
       </div>
-      <motion.p
-        className="section-subtitle"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        Technologies and tools I work with
-      </motion.p>
+      <p className="section-subtitle">Technologies and tools I work with</p>
 
-      <motion.div
-        className="skills-grid"
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        {skills.map((skillGroup, index) => (
-          <motion.div key={index} className="skill-card" variants={item}>
-            <h3>{skillGroup.category}</h3>
-            <div className="skill-items">
-              {skillGroup.items.map((skill, i) => (
-                <div key={i} className="skill-item">
-                  <span>{skill}</span>
-                </div>
-              ))}
+      <LazyMotion features={domAnimation}>
+        <motion.div className="skills-grid">
+          {skills.map((skillGroup, index) => (
+            <div key={index} className="skill-card">
+              <h3>{skillGroup.category}</h3>
+              <div className="skill-items">
+                {skillGroup.items.map((skill, i) => (
+                  <div key={i} className="skill-item">
+                    <span>{skill}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </motion.div>
-        ))}
-      </motion.div>
+          ))}
+        </motion.div>
+      </LazyMotion>
     </div>
   );
 };

@@ -1,16 +1,23 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-// Components
+import React, {
+  useState,
+  useEffect,
+  createContext,
+  useContext,
+  lazy,
+  Suspense,
+} from "react";
+// Critical components loaded eagerly
 import Header from "./components/layout/Header";
 import Hero from "./components/sections/Hero";
-import Skills from "./components/sections/Skills";
-import Experience from "./components/sections/Experience";
-import Projects from "./components/sections/Projects";
-import Education from "./components/sections/Education";
-import Contact from "./components/sections/Contact";
-import Footer from "./components/layout/Footer";
 import SEOHelmet from "./components/SEO/Helmet";
+
+// Lazy load non-critical components
+const Skills = lazy(() => import("./components/sections/Skills"));
+const Experience = lazy(() => import("./components/sections/Experience"));
+const Projects = lazy(() => import("./components/sections/Projects"));
+const Education = lazy(() => import("./components/sections/Education"));
+const Contact = lazy(() => import("./components/sections/Contact"));
+const Footer = lazy(() => import("./components/layout/Footer"));
 
 // Create theme context
 export const ThemeContext = createContext({
@@ -22,7 +29,6 @@ export const ThemeContext = createContext({
 export const useTheme = () => useContext(ThemeContext);
 
 function App() {
-  const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState("light");
 
   // Theme toggle function
@@ -33,83 +39,38 @@ function App() {
   };
 
   useEffect(() => {
-    // Set theme on mount
     document.documentElement.setAttribute("data-theme", theme);
-
-    // Simulate loading
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
   }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <SEOHelmet />
-      <AnimatePresence>
-        {loading ? (
-          <motion.div
-            key="loader"
-            className="loader-container"
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="loader-content">
-              <div className="loader-circle">
-                <div className="loader-circle-inner"></div>
-              </div>
-              <motion.h2
-                className="loader-title"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-              >
-                Venkat Pantham
-              </motion.h2>
-              <motion.p
-                className="loader-subtitle"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-              >
-                Portfolio
-              </motion.p>
-            </div>
-          </motion.div>
-        ) : (
-          <motion.div
-            key="app"
-            className="app"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Header />
-            <main>
-              <section id="home">
-                <Hero />
-              </section>
-              <section id="skills">
-                <Skills />
-              </section>
-              <section id="experience">
-                <Experience />
-              </section>
-              <section id="projects">
-                <Projects />
-              </section>
-              <section id="education">
-                <Education />
-              </section>
-              <section id="contact">
-                <Contact />
-              </section>
-            </main>
+      <div className="app">
+        <Header />
+        <main>
+          <section id="home">
+            <Hero />
+          </section>
+          <Suspense fallback={<div style={{ height: "100vh" }} />}>
+            <section id="skills">
+              <Skills />
+            </section>
+            <section id="experience">
+              <Experience />
+            </section>
+            <section id="projects">
+              <Projects />
+            </section>
+            <section id="education">
+              <Education />
+            </section>
+            <section id="contact">
+              <Contact />
+            </section>
             <Footer />
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </Suspense>
+        </main>
+      </div>
     </ThemeContext.Provider>
   );
 }

@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  LazyMotion,
+  domAnimation,
+  m as motion,
+  AnimatePresence,
+} from "framer-motion";
 import "./Projects.css";
 
 const Projects = () => {
@@ -82,162 +87,89 @@ const Projects = () => {
       ? projects
       : projects.filter((project) => project.category === filter);
 
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
-
-  const filterAnimation = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <div className="projects-container">
       <div className="section-title-container">
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          Projects
-        </motion.h2>
+        <h2 className="section-title">Projects</h2>
       </div>
-      <motion.p
-        className="section-subtitle"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        Some of my recent work
-      </motion.p>
+      <p className="section-subtitle">Some of my recent work</p>
 
-      <motion.div
-        className="project-filters"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={container}
-      >
-        <motion.button
+      <div className="project-filters">
+        <button
           className={`filter-btn ${filter === "all" ? "active" : ""}`}
           onClick={() => setFilter("all")}
-          variants={filterAnimation}
         >
           All
-        </motion.button>
-        <motion.button
+        </button>
+        <button
           className={`filter-btn ${filter === "ai" ? "active" : ""}`}
           onClick={() => setFilter("ai")}
-          variants={filterAnimation}
         >
           AI/ML
-        </motion.button>
-        <motion.button
+        </button>
+        <button
           className={`filter-btn ${filter === "data" ? "active" : ""}`}
           onClick={() => setFilter("data")}
-          variants={filterAnimation}
         >
           Data Science
-        </motion.button>
-        <motion.button
+        </button>
+        <button
           className={`filter-btn ${filter === "mobile" ? "active" : ""}`}
           onClick={() => setFilter("mobile")}
-          variants={filterAnimation}
         >
           Mobile
-        </motion.button>
-        <motion.button
+        </button>
+        <button
           className={`filter-btn ${filter === "fullstack" ? "active" : ""}`}
           onClick={() => setFilter("fullstack")}
-          variants={filterAnimation}
         >
           Full Stack
-        </motion.button>
-      </motion.div>
+        </button>
+      </div>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          className="projects-grid"
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          layout
-          key={filter}
-          exit={{ opacity: 0 }}
-        >
-          {filteredProjects.map((project) => (
-            <motion.div
-              className="project-card"
-              key={project.id}
-              variants={item}
-              layout
-            >
-              <div className="project-info">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="project-tech">
-                  {project.technologies.map((tech, index) => (
-                    <div key={index} className="tech-badge">
-                      <span>{tech}</span>
-                    </div>
-                  ))}
+      <LazyMotion features={domAnimation}>
+        <AnimatePresence mode="wait">
+          <motion.div className="projects-grid" layout key={filter}>
+            {filteredProjects.map((project) => (
+              <motion.div className="project-card" key={project.id} layout>
+                <div className="project-info">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                  <div className="project-tech">
+                    {project.technologies.map((tech, index) => (
+                      <div key={index} className="tech-badge">
+                        <span>{tech}</span>
+                      </div>
+                    ))}
+                  </div>
+                  {/* <div className="project-links">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="project-link"
+                      >
+                        <i className="fab fa-github"></i> Code
+                      </a>
+                    )}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="project-link"
+                      >
+                        <i className="fas fa-external-link-alt"></i> Demo
+                      </a>
+                    )}
+                  </div> */}
                 </div>
-                {/* <div className="project-links">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="project-link"
-                    >
-                      <i className="fab fa-github"></i> Code
-                    </a>
-                  )}
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="project-link"
-                    >
-                      <i className="fas fa-external-link-alt"></i> Demo
-                    </a>
-                  )}
-                </div> */}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </AnimatePresence>
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+      </LazyMotion>
     </div>
   );
 };

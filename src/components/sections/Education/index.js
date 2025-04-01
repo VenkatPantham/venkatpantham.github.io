@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, m as motion } from "framer-motion";
 import "./Education.css";
 
 const Education = () => {
@@ -48,64 +48,21 @@ const Education = () => {
     },
   ];
 
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
-
   return (
     <div className="education-container">
       <div className="section-title-container">
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          Education
-        </motion.h2>
+        <h2 className="section-title">Education</h2>
       </div>
-      <motion.p
-        className="section-subtitle"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        My academic background
-      </motion.p>
+      <p className="section-subtitle">My academic background</p>
 
-      <motion.div
-        className="education-content"
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-      >
+      <div className="education-content">
         {education.map((edu, index) => (
-          <motion.div key={index} className="education-card" variants={item}>
+          <div key={index} className="education-card">
             <div className="education-header">
               <h3>{edu.school}</h3>
               <span className="education-period">{edu.period}</span>
             </div>
+
             <div className="education-body">
               <div className="degree-container">
                 <h4>{edu.degree}</h4>
@@ -120,30 +77,22 @@ const Education = () => {
                 </ul>
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
 
       <div className="certifications">
         <h3>Certifications</h3>
-        <motion.div
-          className="certification-grid"
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={index}
-              className="certification-item"
-              variants={item}
-            >
-              <i className={`fas ${cert.icon}`}></i>
-              <span>{cert.name}</span>
-            </motion.div>
-          ))}
-        </motion.div>
+        <LazyMotion features={domAnimation}>
+          <motion.div className="certification-grid">
+            {certifications.map((cert, index) => (
+              <div key={index} className="certification-item">
+                <i className={`fas ${cert.icon}`}></i>
+                <span>{cert.name}</span>
+              </div>
+            ))}
+          </motion.div>
+        </LazyMotion>
       </div>
     </div>
   );

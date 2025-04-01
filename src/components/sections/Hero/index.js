@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
-import { motion } from "framer-motion";
 import "./Hero.css";
 import profilePic from "../../../assets/profile.jpg";
 
@@ -49,56 +48,24 @@ const Hero = () => {
     return () => clearInterval(ticker);
   }, [tick, typingSpeed]);
 
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
-
   return (
     <div className="hero-container">
       <div className="hero-bg-shape hero-shape-1"></div>
-
       <div className="hero-content">
-        <motion.div
-          className="hero-text"
-          variants={container}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.span className="greeting" variants={item}>
-            Hello, I'm
-          </motion.span>
-          <motion.h1 variants={item}>Venkat Pantham</motion.h1>
-          <motion.h2 variants={item}>
+        <div className="hero-text">
+          <span className="greeting">Hello, I'm</span>
+          <h1>Venkat Pantham</h1>
+          <h2>
             <span className="typing-text">{text}</span>
             <span className="cursor">|</span>
-          </motion.h2>
-          <motion.p variants={item}>
+          </h2>
+          <p>
             Detail-oriented Software Engineer with experience in full-stack
             development and AI/ML solutions. Proficient in building secure,
             scalable applications with React, Node.js, and Python. Passionate
             about solving complex problems through innovative technology.
-          </motion.p>
-
-          <motion.div className="hero-btns" variants={item}>
+          </p>
+          <div className="hero-btns">
             <a
               href={`${process.env.PUBLIC_URL}/resume.pdf`}
               className="btn secondary-btn"
@@ -107,9 +74,8 @@ const Hero = () => {
             >
               <i className="fas fa-download"></i> Download Resume
             </a>
-          </motion.div>
-
-          <motion.div className="social-links" variants={item}>
+          </div>
+          <div className="social-links">
             <a
               href="https://github.com/venkatpantham"
               target="_blank"
@@ -134,9 +100,8 @@ const Hero = () => {
             >
               <i className="fas fa-envelope"></i>
             </a>
-          </motion.div>
-        </motion.div>
-
+          </div>
+        </div>
         <div className="hero-image-container">
           <div className="blob-effect"></div>
           <div className="profile-circle">
@@ -144,6 +109,9 @@ const Hero = () => {
               src={profilePic}
               alt="Venkat Pantham"
               className="profile-img"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
             />
           </div>
         </div>

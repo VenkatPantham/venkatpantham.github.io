@@ -106,7 +106,7 @@
 .contact-item h3 {
   font-size: 1.2rem;
   margin-bottom: var(--space-1);
-  color: white;
+  color: var(--text-primary);
   position: relative;
   z-index: 2;
 }
@@ -120,7 +120,7 @@
 }
 
 .contact-item:hover p {
-  color: white;
+  color: var(--text-secondary);
 }
 
 .social-links-contact {
