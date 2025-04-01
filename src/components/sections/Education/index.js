@@ -65,7 +65,9 @@ const Education = () => {
 
             <div className="education-body">
               <div className="degree-container">
-                <h4>{edu.degree}</h4>
+                <div className="degree-title">
+                  <h4>{edu.degree}</h4>
+                </div>
                 {edu.gpa && <span className="gpa">GPA: {edu.gpa}</span>}
               </div>
               <div className="coursework">
