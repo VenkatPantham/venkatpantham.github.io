@@ -19,7 +19,6 @@
     var(--overlay-secondary) 0%,
     transparent 70%
   );
-  filter: blur(40px);
   z-index: -1;
   border-radius: 50%;
 }
@@ -36,7 +35,6 @@
     var(--overlay-primary) 0%,
     transparent 70%
   );
-  filter: blur(40px);
   z-index: -1;
   border-radius: 50%;
 }
@@ -77,76 +75,6 @@
   margin-bottom: 2.5rem;
 }
 
-.project-filters {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-2);
-  margin-bottom: var(--space-4);
-  padding: var(--space-2);
-  max-width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  position: relative;
-}
-
-.project-filters::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: var(--primary-gradient);
-  border-radius: var(--radius-full);
-}
-
-.filter-btn {
-  background: var(--bg-card);
-  border: none;
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-full);
-  font-size: var(--font-base);
-  font-weight: var(--fw-medium);
-  cursor: pointer;
-  transition: var(--transition-normal);
-  color: var(--text-secondary);
-  border: var(--border-thin);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  letter-spacing: 0.5px;
-  white-space: nowrap;
-  margin: 0 5px;
-  box-shadow: var(--shadow-sm);
-}
-
-.filter-btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--primary-gradient);
-  z-index: -1;
-  opacity: 0;
-  transition: var(--transition-normal);
-}
-
-.filter-btn.active::before,
-.filter-btn:hover::before {
-  opacity: 1;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-  color: var(--text-primary);
-  border-color: transparent;
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-glow);
-}
-
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -157,8 +85,6 @@
 
 .project-card {
   background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-md);
@@ -305,8 +231,6 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   letter-spacing: 0.5px;
   text-decoration: none;
 }
@@ -339,11 +263,6 @@
   .tech-badge {
     font-size: var(--font-xs);
     padding: var(--space-1) var(--space-2);
-  }
-
-  .filter-btn {
-    padding: var(--space-1) var(--space-2);
-    font-size: var(--font-xs);
   }
 
   .project-link {
@@ -384,11 +303,6 @@
   }
 
   .tech-badge {
-    font-size: var(--font-sm);
-  }
-
-  .filter-btn {
-    padding: var(--space-2) var(--space-3);
     font-size: var(--font-sm);
   }
 
@@ -462,13 +376,11 @@
   .projects-container::before {
     width: 350px;
     height: 350px;
-    filter: blur(60px);
   }
 
   .projects-container::after {
     width: 300px;
     height: 300px;
-    filter: blur(60px);
   }
 
   .section-title {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   LazyMotion,
   domAnimation,
@@ -8,8 +8,6 @@ import {
 import "./Projects.css";
 
 const Projects = () => {
-  const [filter, setFilter] = useState("all");
-
   const projects = [
     {
       id: 1,
@@ -25,7 +23,6 @@ const Projects = () => {
         "AWS S3",
         "AES Encryption",
       ],
-      category: "ai",
       github: "https://github.com/venkatpantham/xrdaas",
       demo: "https://xrdaas-demo.example.com",
     },
@@ -43,7 +40,6 @@ const Projects = () => {
         "Data Science",
         "ML",
       ],
-      category: "data",
       github: "https://github.com/venkatpantham/maryland-crime-analysis",
       demo: "https://maryland-crime-analysis.example.com",
     },
@@ -60,16 +56,10 @@ const Projects = () => {
         "AWS",
         "Netlify",
       ],
-      category: "fullstack",
       github: "https://github.com/venkatpantham/food-ordering",
       demo: "https://food-ordering-platform.example.com",
     },
   ];
-
-  const filteredProjects =
-    filter === "all"
-      ? projects
-      : projects.filter((project) => project.category === filter);
 
   return (
     <div className="projects-container">
@@ -78,43 +68,10 @@ const Projects = () => {
       </div>
       <p className="section-subtitle">Some of my recent work</p>
 
-      <div className="project-filters">
-        <button
-          className={`filter-btn ${filter === "all" ? "active" : ""}`}
-          onClick={() => setFilter("all")}
-        >
-          All
-        </button>
-        <button
-          className={`filter-btn ${filter === "ai" ? "active" : ""}`}
-          onClick={() => setFilter("ai")}
-        >
-          AI/ML
-        </button>
-        <button
-          className={`filter-btn ${filter === "data" ? "active" : ""}`}
-          onClick={() => setFilter("data")}
-        >
-          Data Science
-        </button>
-        <button
-          className={`filter-btn ${filter === "mobile" ? "active" : ""}`}
-          onClick={() => setFilter("mobile")}
-        >
-          Mobile
-        </button>
-        <button
-          className={`filter-btn ${filter === "fullstack" ? "active" : ""}`}
-          onClick={() => setFilter("fullstack")}
-        >
-          Full Stack
-        </button>
-      </div>
-
       <LazyMotion features={domAnimation}>
         <AnimatePresence mode="wait">
-          <motion.div className="projects-grid" layout key={filter}>
-            {filteredProjects.map((project) => (
+          <motion.div className="projects-grid" layout>
+            {projects.map((project) => (
               <motion.div className="project-card" key={project.id} layout>
                 <div className="project-info">
                   <h3>{project.title}</h3>
