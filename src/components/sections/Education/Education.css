@@ -493,6 +493,10 @@
     padding: var(--space-5) var(--space-4);
   }
 
+  .education-header h3 {
+    font-size: var(--font-lg);
+  }
+
   .certification-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -521,6 +525,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .education-header h3 {
+    font-size: var(--font-xl);
   }
 
   .education-card {

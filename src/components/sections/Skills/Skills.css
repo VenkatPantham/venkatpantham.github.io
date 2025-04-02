@@ -244,7 +244,7 @@
   }
 
   .skill-card h3 {
-    font-size: var(--font-xl);
+    font-size: var(--font-lg);
   }
 }
 
@@ -265,5 +265,9 @@
 
   .section-title {
     font-size: var(--font-3xl);
+  }
+
+  .skill-card h3 {
+    font-size: var(--font-xl);
   }
 }

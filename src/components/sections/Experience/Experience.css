@@ -254,11 +254,12 @@
 
 .timeline-header h3 {
   grid-area: position;
-  font-size: var(--font-lg);
-  font-weight: var(--fw-bold);
+  font-size: var(--font-xl);
+  font-weight: var(--fw-semibold);
   margin: 0 0 0.5rem 0;
   background: var(--primary-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -758,7 +759,7 @@
   }
 
   .timeline-header h3 {
-    font-size: var(--font-xl);
+    font-size: var(--font-lg);
   }
 }
 
@@ -784,7 +785,7 @@
   }
 
   .timeline-header h3 {
-    font-size: var(--font-2xl);
+    font-size: var(--font-xl);
   }
 
   .timeline-content {
