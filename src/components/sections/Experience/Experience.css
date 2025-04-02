@@ -85,7 +85,7 @@
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 4rem 0;
   width: 100%;
 }
 
@@ -458,6 +458,35 @@
     margin-top 0.3s ease;
 }
 
+.achievements h4,
+.responsibilities h4,
+.tech-used h4 {
+  font-size: var(--font-md);
+  font-weight: var(--fw-semibold);
+  margin-bottom: var(--space-3);
+  color: var(--text-primary);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.responsibilities h4::before,
+.tech-used h4::before,
+.achievements h4::before {
+  display: none;
+}
+
+.expand-indicator:hover i {
+  color: var(--text-primary);
+}
+
+.timeline-content.expanded .expand-indicator i {
+  transform: rotate(180deg);
+  color: var(--text-primary);
+}
+
 .achievements-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -547,15 +576,14 @@
   box-shadow: var(--shadow-glow);
 }
 
-/* Media Queries */
-
+/* Media Queries - Mobile First */
 @media screen and (max-width: 480px) {
   .section-title {
-    font-size: 1.8rem;
+    font-size: var(--font-lg);
   }
 
   .section-subtitle {
-    font-size: 0.9rem;
+    font-size: var(--font-xs);
   }
 
   .timeline-content {
@@ -588,74 +616,24 @@
     font-size: var(--font-xs);
   }
 
-  .responsibilities h4,
-  .tech-used h4,
-  .achievements h4 {
-    font-size: var(--font-base);
+  .achievement-highlight span {
+    font-size: var(--font-xs);
+  }
+
+  .experience-container {
+    padding: var(--space-4) var(--space-2);
   }
 
   .experience-timeline::before {
     left: 12px;
   }
 
-  .timeline-item {
-    padding-left: 45px;
-  }
-
-  .timeline-item.left,
-  .timeline-item.right {
-    padding-left: 45px;
-  }
-
-  .timeline-item.left .timeline-marker,
-  .timeline-item.right .timeline-marker {
-    left: 0;
-  }
-
-  .timeline-item.left .timeline-content::after,
-  .timeline-item.right .timeline-content::after {
-    display: none;
-  }
-
-  .timeline-item.left .timeline-date,
-  .timeline-item.right .timeline-date {
-    left: 45px;
-    top: -35px;
-    font-size: 0.8rem;
-    transform: translateY(0);
-  }
-
-  .tech-grid {
-    gap: 8px;
-  }
-
-  .job-summary,
-  .responsibilities li {
-    font-size: var(--font-sm);
-  }
-
-  .tech-pill,
-  .job-type-badge {
+  .tech-pill {
     font-size: var(--font-xs);
   }
 
   .summary-container {
     padding: var(--space-2);
-  }
-
-  .responsibilities li {
-    padding-left: 20px;
-    font-size: 0.9rem;
-  }
-
-  .company-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .tech-pills {
-    margin-top: 0.5rem;
   }
 }
 
@@ -701,28 +679,13 @@
     font-size: var(--font-sm);
   }
 
-  .responsibilities h4,
-  .tech-used h4,
-  .achievements h4 {
-    font-size: var(--font-base);
-  }
-
   .responsibilities li {
     font-size: var(--font-sm);
+    padding-left: 20px;
   }
 
   .tech-item {
     font-size: var(--font-sm);
-  }
-
-  .achievement-highlight span {
-    font-size: var(--font-xs);
-  }
-
-  .responsibilities h4,
-  .tech-used h4,
-  .achievements h4 {
-    font-size: var(--font-base);
   }
 
   .experience-timeline::before {
@@ -765,6 +728,12 @@
   .achievements-list {
     grid-template-columns: 1fr;
   }
+
+  .experience-container::before,
+  .experience-container::after {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -773,47 +742,47 @@
     scroll-margin-top: calc(var(--header-height) + 20px);
   }
 
-  /* Tablet-specific styles if needed */
+  .experience-container::before,
+  .experience-container::after {
+    width: 300px;
+    height: 300px;
+  }
+
+  .section-title {
+    font-size: var(--font-2xl);
+  }
+
+  .timeline-header h3 {
+    font-size: var(--font-xl);
+  }
 }
 
 @media screen and (min-width: 1024px) {
-  /* Desktop-specific styles */
+  .experience-container {
+    padding: var(--space-6) var(--space-5);
+  }
+
   .experience-container::before {
     width: 450px;
     height: 450px;
+    filter: blur(60px);
   }
 
   .experience-container::after {
     width: 350px;
     height: 350px;
+    filter: blur(60px);
   }
-}
 
-.achievements h4,
-.responsibilities h4,
-.tech-used h4 {
-  font-size: var(--font-md);
-  font-weight: var(--fw-semibold);
-  margin-bottom: var(--space-3);
-  color: var(--text-primary);
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-}
+  .section-title {
+    font-size: var(--font-3xl);
+  }
 
-.responsibilities h4::before,
-.tech-used h4::before,
-.achievements h4::before {
-  display: none;
-}
+  .timeline-header h3 {
+    font-size: var(--font-2xl);
+  }
 
-.expand-indicator:hover i {
-  color: var(--text-primary);
-}
-
-.timeline-content.expanded .expand-indicator i {
-  transform: rotate(180deg);
-  color: var(--text-primary);
+  .timeline-content {
+    padding: var(--space-5);
+  }
 }

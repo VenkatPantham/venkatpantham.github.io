@@ -105,12 +105,7 @@ const Contact = () => {
     return (
       <div className="contact-container">
         <LazyMotion features={domAnimation}>
-          <motion.div
-            className="form-success"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <motion.div className="form-success">
             <FontAwesomeIcon icon={faCheckCircle} className="fa-icon" />
             <h3>Message Sent Successfully!</h3>
             <p>Thank you for reaching out. I'll get back to you soon.</p>
@@ -133,18 +128,9 @@ const Contact = () => {
       </p>
 
       <LazyMotion features={domAnimation}>
-        <motion.div
-          className="contact-content"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+        <motion.div className="contact-content">
           <div className="contact-info">
-            <motion.div
-              className="contact-item"
-              whileHover={{ y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
+            <motion.div className="contact-item">
               <FontAwesomeIcon icon={faEnvelope} className="fa-icon" />
               <div>
                 <h3>Email</h3>
@@ -152,11 +138,7 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            <motion.div
-              className="contact-item"
-              whileHover={{ y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
+            <motion.div className="contact-item">
               <FontAwesomeIcon icon={faMapMarkerAlt} className="fa-icon" />
               <div>
                 <h3>Location</h3>
@@ -164,11 +146,7 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            <motion.div
-              className="contact-item"
-              whileHover={{ y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
+            <motion.div className="contact-item">
               <FontAwesomeIcon icon={faPhoneAlt} className="fa-icon" />
               <div>
                 <h3>Phone</h3>
@@ -177,45 +155,34 @@ const Contact = () => {
             </motion.div>
 
             <div className="social-links-contact">
-              <motion.a
+              <a
                 href="https://github.com/venkatpantham"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Visit my GitHub profile"
-                whileHover={{ y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
               >
                 <FontAwesomeIcon icon={faGithub} className="fa-icon" />
-              </motion.a>
-              <motion.a
+              </a>
+              <a
                 href="https://linkedin.com/in/venkat-pantham"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Connect with me on LinkedIn"
-                whileHover={{ y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
               >
                 <FontAwesomeIcon icon={faLinkedin} className="fa-icon" />
-              </motion.a>
-              <motion.a
+              </a>
+              <a
                 href="mailto:venkatpantham7@gmail.com"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Send me an email"
-                whileHover={{ y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
               >
                 <FontAwesomeIcon icon={faEnvelope} className="fa-icon" />
-              </motion.a>
+              </a>
             </div>
           </div>
 
-          <motion.div
-            className="contact-form-container"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <motion.div className="contact-form-container">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Name *</label>
@@ -266,12 +233,7 @@ const Contact = () => {
                 />
               </div>
               {error && (
-                <motion.div
-                  className="error-message"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                >
+                <motion.div className="error-message">
                   <FontAwesomeIcon
                     icon={faExclamationTriangle}
                     className="fa-icon"
@@ -283,9 +245,6 @@ const Contact = () => {
                 type="submit"
                 className="submit-btn"
                 disabled={isLoading}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: "spring", stiffness: 400 }}
               >
                 {isLoading ? "Sending..." : "Send Message"}
                 <FontAwesomeIcon icon={faPaperPlane} className="fa-icon" />

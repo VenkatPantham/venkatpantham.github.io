@@ -49,22 +49,6 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Healthcare Mobile App",
-      description:
-        "Built a multi-platform healthcare app with real-time chat and secure payment systems that attracted 20,000+ active users in six months. Implemented cross-device data synchronization and collaborated within Agile sprints with designers and engineers to create a seamless user experience.",
-      technologies: [
-        "React Native",
-        "Node.js",
-        "MongoDB",
-        "Socket.io",
-        "Payment Gateway",
-      ],
-      category: "mobile",
-      github: "https://github.com/venkatpantham/healthcare-app",
-      demo: "https://healthcare-app.example.com",
-    },
-    {
-      id: 4,
       title: "Food Ordering Platform",
       description:
         "Developed a scalable MERN stack food-ordering platform for 1,000+ users, supporting 20 API endpoints. Optimized database queries for reduced load times and accelerated data handling speed for faster and more reliable order management. Deployed the front-end on Netlify and back-end on AWS.",

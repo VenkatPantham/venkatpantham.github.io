@@ -9,7 +9,7 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 
-const NavBar = () => {
+const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
@@ -38,7 +38,6 @@ const NavBar = () => {
       e.preventDefault();
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
-        // For mobile, use a custom scroll with an offset
         const offset = 100;
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - offset;
@@ -125,4 +124,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Header;

@@ -335,7 +335,148 @@
 }
 
 /* Responsive adjustments */
+/* Media Queries - Mobile First */
+@media screen and (max-width: 480px) {
+  .hero-image-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .profile-circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .blob-effect {
+    width: 200px;
+    height: 200px;
+  }
+
+  .orbit {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero-text h1 {
+    font-size: var(--font-3xl);
+  }
+
+  .hero-text h2 {
+    font-size: var(--font-lg);
+  }
+
+  .hero-text p {
+    font-size: var(--font-base);
+  }
+
+  .greeting {
+    font-size: var(--font-base);
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .hero-btns .btn {
+    width: 100%;
+    font-size: var(--font-base);
+  }
+
+  .hero-container {
+    padding: var(--space-4) var(--space-2);
+  }
+
+  .social-links a {
+    width: 35px;
+    height: 35px;
+    font-size: var(--font-base);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero-container {
+    padding: var(--space-4) var(--space-3);
+    scroll-margin-top: 0;
+  }
+
+  .hero-image-container {
+    width: 260px;
+    height: 260px;
+  }
+
+  .profile-circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .blob-effect {
+    width: 240px;
+    height: 240px;
+  }
+
+  .orbit {
+    width: 280px;
+    height: 280px;
+  }
+
+  .hero-content {
+    flex-direction: column-reverse;
+    gap: var(--space-4);
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .hero-text h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .hero-btns .btn {
+    width: 100%;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .hero-text h1 {
+    font-size: var(--font-4xl);
+  }
+
+  .hero-text h2 {
+    font-size: var(--font-xl);
+  }
+
+  .hero-text p {
+    font-size: var(--font-base);
+  }
+
+  .greeting {
+    font-size: var(--font-base);
+  }
+
+  .hero-container::before,
+  .hero-container::after {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .hero-container {
+    padding: var(--space-5) var(--space-4);
+  }
+
   .hero-content {
     flex-direction: column-reverse;
     gap: var(--space-4);
@@ -389,131 +530,21 @@
   .hero-shape-1 {
     width: 400px;
     height: 400px;
+    filter: blur(60px);
   }
 
   .hero-shape-2 {
     width: 350px;
     height: 350px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .hero-container {
-    padding: var(--space-4) var(--space-3);
-    scroll-margin-top: 0;
-  }
-
-  .hero-image-container {
-    width: 260px;
-    height: 260px;
-  }
-
-  .profile-circle {
-    width: 220px;
-    height: 220px;
-  }
-
-  .blob-effect {
-    width: 240px;
-    height: 240px;
-  }
-
-  .orbit {
-    width: 280px;
-    height: 280px;
-  }
-
-  .hero-btns {
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-
-  .hero-btns .btn {
-    width: 100%;
-  }
-
-  .hero-content {
-    flex-direction: column-reverse;
-    gap: var(--space-4);
-    text-align: center;
-  }
-
-  .hero-text {
-    max-width: 100%;
-    align-items: center;
-  }
-
-  .hero-text h2::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .social-links {
-    justify-content: center;
+    filter: blur(60px);
   }
 
   .hero-text h1 {
-    font-size: var(--font-4xl);
+    font-size: var(--font-5xl);
   }
 
   .hero-text h2 {
-    font-size: var(--font-xl);
-  }
-
-  .hero-text p {
-    font-size: var(--font-base);
-  }
-
-  .greeting {
-    font-size: var(--font-base);
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .hero-image-container {
-    width: 220px;
-    height: 220px;
-  }
-
-  .profile-circle {
-    width: 180px;
-    height: 180px;
-  }
-
-  .blob-effect {
-    width: 200px;
-    height: 200px;
-  }
-
-  .orbit {
-    width: 240px;
-    height: 240px;
-  }
-
-  .hero-text h1 {
-    font-size: var(--font-3xl);
-  }
-
-  .hero-text h2 {
-    font-size: var(--font-lg);
-  }
-
-  .hero-text p {
-    font-size: var(--font-base);
-  }
-
-  .greeting {
-    font-size: var(--font-base);
-  }
-
-  .hero-btns {
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-
-  .hero-btns .btn {
-    width: 100%;
-    font-size: var(--font-base);
+    font-size: var(--font-2xl);
   }
 }
 

@@ -41,6 +41,43 @@
   border-radius: 50%;
 }
 
+.section-title-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  background: var(--primary-gradient);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: var(--radius-full);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+
 .education-content {
   display: flex;
   flex-direction: column;
@@ -148,7 +185,7 @@
   gap: var(--space-2);
 }
 
-.degree-title h3 {
+.degree-title h4 {
   font-size: var(--font-lg);
   font-weight: var(--fw-semibold);
   color: var(--text-primary);
@@ -333,27 +370,50 @@
   z-index: 2;
 }
 
-/* Responsive styles */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .certification-grid {
-    grid-template-columns: repeat(2, 1fr);
+/* Media Queries - Mobile First */
+@media screen and (max-width: 480px) {
+  .education-header h3 {
+    font-size: var(--font-base);
   }
 
-  .coursework ul {
-    grid-template-columns: repeat(2, 1fr);
+  .education-period {
+    font-size: var(--font-xs);
+  }
+
+  .degree-title h3 {
+    font-size: var(--font-base);
+  }
+
+  .education-card {
+    padding: var(--space-3);
+  }
+
+  .coursework li {
+    font-size: var(--font-xs);
+  }
+
+  .gpa {
+    font-size: var(--font-xs);
+  }
+
+  .certification-item span {
+    font-size: var(--font-xs);
   }
 
   .education-container {
-    padding: var(--space-5) var(--space-4);
-    scroll-margin-top: calc(var(--header-height) + 20px);
+    padding: var(--space-4) var(--space-2);
   }
 
   .section-title {
-    font-size: var(--font-2xl);
+    font-size: var(--font-lg);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-xs);
+    margin-bottom: var(--space-3);
   }
 }
 
-/* Mobile styles */
 @media screen and (max-width: 767px) {
   .education-header {
     grid-template-columns: 1fr;
@@ -430,7 +490,36 @@
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .education-container {
+    padding: var(--space-5) var(--space-4);
+    scroll-margin-top: calc(var(--header-height) + 20px);
+  }
+
+  .certification-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .coursework ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .education-container::before,
+  .education-container::after {
+    width: 250px;
+    height: 250px;
+  }
+
+  .section-title {
+    font-size: var(--font-2xl);
+  }
+}
+
 @media screen and (min-width: 1024px) {
+  .education-container {
+    padding: var(--space-6) var(--space-5);
+  }
+
   .education-header {
     flex-direction: row;
     justify-content: space-between;
@@ -470,86 +559,13 @@
   .section-title {
     font-size: var(--font-3xl);
   }
-}
 
-@media screen and (max-width: 480px) {
-  .education-header h3 {
-    font-size: var(--font-base);
+  .coursework ul {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  .education-period {
-    font-size: var(--font-xs);
+  .certification-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
   }
-
-  .education-card {
-    padding: var(--space-3);
-  }
-
-  .degree-container h3 {
-    font-size: var(--font-base);
-  }
-
-  .coursework li {
-    font-size: var(--font-sm);
-  }
-
-  .education-header,
-  .degree-container,
-  .coursework {
-    text-align: left;
-  }
-
-  .section-title {
-    font-size: var(--font-lg);
-  }
-
-  .section-subtitle {
-    font-size: var(--font-xs);
-    margin-bottom: var(--space-3);
-  }
-
-  .certifications h3 {
-    font-size: var(--font-lg);
-  }
-
-  .certification-item span {
-    font-size: var(--font-sm);
-  }
-}
-
-.section-title-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0.5rem;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--text-primary);
-  position: relative;
-  display: inline-block;
-}
-
-.section-title::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 60%;
-  height: 3px;
-  background: var(--primary-gradient);
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: var(--radius-full);
-}
-
-.section-subtitle {
-  text-align: center;
-  font-size: 1rem;
-  color: var(--text-secondary);
-  margin-bottom: 2.5rem;
 }

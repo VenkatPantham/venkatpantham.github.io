@@ -380,7 +380,7 @@ main {
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   section {
-    padding: var(--space-7) var(--space-4);
+    padding: var(--space-7) var(--space-0);
     scroll-margin-top: calc(var(--header-height) + 20px);
   }
 
@@ -412,7 +412,7 @@ main {
   }
 
   section {
-    padding: var(--space-7) var(--space-1);
+    padding: var(--space-7) var(--space-0);
     scroll-margin-top: calc(var(--header-height) + 20px);
   }
 

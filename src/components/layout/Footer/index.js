@@ -3,15 +3,13 @@ import { LazyMotion, domAnimation, m as motion } from "framer-motion";
 import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="footer">
-      <div className="footer-bg-blob-1"></div>
-      <div className="footer-bg-blob-2"></div>
       <div className="footer-content">
         <div className="footer-logo">
           <a href="#home" aria-label="Go to home section">
@@ -55,7 +53,10 @@ const Footer = () => {
         </LazyMotion>
       </div>
       <div className="footer-bottom">
-        <p>&copy; {currentYear} Venkat Pantham. All rights reserved.</p>
+        <p>
+          &copy; {currentYear} Venkat Pantham. All rights reserved.
+          <FontAwesomeIcon icon={faHeart} className="heart" />
+        </p>
         <p>
           <span className="role">Software Engineer & Full-Stack Developer</span>
         </p>

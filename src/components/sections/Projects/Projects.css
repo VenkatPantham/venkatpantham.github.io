@@ -322,7 +322,7 @@
   color: var(--text-primary);
 }
 
-/* Responsive Styles */
+/* Media Queries - Mobile First */
 @media screen and (max-width: 480px) {
   .project-card {
     padding: var(--space-3);
@@ -352,7 +352,15 @@
   }
 
   .projects-container {
-    padding: var(--space-4) var(--space-3);
+    padding: var(--space-4) var(--space-2);
+  }
+
+  .section-title {
+    font-size: var(--font-lg);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-xs);
   }
 }
 
@@ -367,10 +375,39 @@
     gap: var(--space-4);
   }
 
+  .project-info h3 {
+    font-size: var(--font-lg);
+  }
+
+  .project-info p {
+    font-size: var(--font-sm);
+  }
+
+  .tech-badge {
+    font-size: var(--font-sm);
+  }
+
+  .filter-btn {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-sm);
+  }
+
+  .project-link {
+    font-size: var(--font-sm);
+  }
+
   .projects-container::before,
   .projects-container::after {
     width: 200px;
     height: 200px;
+  }
+
+  .section-title {
+    font-size: var(--font-xl);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-sm);
   }
 }
 
@@ -397,13 +434,14 @@
     font-size: var(--font-sm);
   }
 
-  .filter-btn {
-    padding: var(--space-2) var(--space-3);
-    font-size: var(--font-sm);
+  .projects-container::before,
+  .projects-container::after {
+    width: 250px;
+    height: 250px;
   }
 
-  .project-link {
-    font-size: var(--font-sm);
+  .section-title {
+    font-size: var(--font-2xl);
   }
 }
 
@@ -431,5 +469,9 @@
     width: 300px;
     height: 300px;
     filter: blur(60px);
+  }
+
+  .section-title {
+    font-size: var(--font-3xl);
   }
 }
