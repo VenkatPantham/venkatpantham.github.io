@@ -32,21 +32,20 @@ const Header = () => {
   };
 
   const handleNavClick = (e, targetId) => {
+    e.preventDefault();
     setIsMenuOpen(false);
 
-    if (window.innerWidth <= 767) {
-      e.preventDefault();
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        const offset = 100;
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const headerHeight = document.querySelector(".navbar").offsetHeight;
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerHeight;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      }
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
 

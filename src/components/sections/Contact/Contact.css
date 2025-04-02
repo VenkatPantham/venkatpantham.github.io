@@ -394,7 +394,6 @@
 
   .contact-container {
     padding: var(--space-4) var(--space-3);
-    scroll-margin-top: calc(var(--header-height) + 20px);
   }
 
   .contact-container::before,
@@ -417,7 +416,6 @@
 
   .contact-container {
     padding: var(--space-5) var(--space-4);
-    scroll-margin-top: calc(var(--header-height) + 20px);
   }
 }
 

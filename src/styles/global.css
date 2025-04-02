@@ -75,16 +75,25 @@ img {
 }
 
 section {
+  position: relative;
   padding: var(--space-6) var(--space-4);
   width: 100%;
   overflow-x: hidden;
-  scroll-margin-top: calc(var(--header-height) + 40px);
-  margin-top: -10px;
+  scroll-margin-top: var(--header-height);
+  transition: var(--transition-normal);
 }
 
 section > div[id] {
-  scroll-margin-top: calc(var(--header-height) + 40px);
+  scroll-margin-top: var(--header-height);
   width: 100%;
+}
+
+/* Root variables */
+:root {
+  /* Layout */
+  --header-height: 80px;
+  --section-padding: 6rem 0;
+  --section-margin: 2rem 0;
 }
 
 /* Common components */
@@ -343,12 +352,16 @@ main {
 }
 
 @media screen and (max-width: 767px) {
-  html {
-    scroll-padding-top: calc(var(--header-height) + 40px);
+  :root {
+    scroll-padding-top: var(--header-height);
   }
 
   .app {
     padding-top: var(--header-height);
+  }
+
+  html {
+    scroll-padding-top: var(--header-height);
   }
 
   body {
@@ -361,12 +374,11 @@ main {
 
   section {
     padding: var(--space-5) var(--space-0);
-    scroll-margin-top: 120px; /* Increased value for mobile */
-    margin-top: 0; /* Remove negative margin for mobile */
+    scroll-margin-top: var(--header-height);
   }
 
   section > div[id] {
-    scroll-margin-top: 120px; /* Increased value for mobile */
+    scroll-margin-top: var(--header-height);
   }
 
   .section-title {

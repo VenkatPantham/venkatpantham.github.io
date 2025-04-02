@@ -7,7 +7,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  scroll-margin-top: calc(var(--header-height) + 40px);
 }
 
 .experience-container::before {
@@ -640,7 +639,6 @@
 @media screen and (max-width: 767px) {
   .experience-container {
     padding: var(--space-4) var(--space-3);
-    scroll-margin-top: calc(var(--header-height) + 20px);
   }
 
   .timeline-meta {
@@ -747,7 +745,6 @@
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .experience-container {
     padding: var(--space-5) var(--space-4);
-    scroll-margin-top: calc(var(--header-height) + 20px);
   }
 
   .experience-container::before,

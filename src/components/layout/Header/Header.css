@@ -13,6 +13,33 @@
   padding: 0 var(--space-3);
 }
 
+/* Update navbar height for mobile */
+@media screen and (max-width: 767px) {
+  .navbar {
+    height: var(--header-height);
+  }
+
+  .navbar.scrolled {
+    height: calc(var(--header-height) - 10px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .nav-menu {
+    padding-top: calc(var(--header-height) + 20px);
+  }
+
+  .nav-link {
+    padding: 1rem 0;
+    font-size: var(--font-lg);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-link:hover {
+    transform: translateX(10px);
+  }
+}
+
 .navbar.scrolled {
   background: var(--bg-header);
   backdrop-filter: blur(15px);
