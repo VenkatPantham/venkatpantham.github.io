@@ -396,7 +396,8 @@
 
 @media screen and (max-width: 767px) {
   .hero-container {
-    padding: var(--space-4) var(--space-3);
+    padding: var(--space-6) var(--space-3);
+    margin-top: -40px;
     scroll-margin-top: 0;
   }
 
