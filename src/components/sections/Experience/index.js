@@ -48,10 +48,10 @@ const Experience = () => {
     {
       company: "Aspire InfoLabs",
       position: "Software Engineer",
-      period: "Jul 2021 - Jul 2022",
+      period: "Oct 2020 - Aug 2023",
       location: "Hyderabad, India",
       jobType: "Full-time",
-      duration: "1 year",
+      duration: "3 years",
       summary:
         "Led frontend development for healthcare management platforms with focus on performance optimization.",
       keyPoint: "Achieved 150k+ downloads and reduced app crashes by 50%.",
@@ -81,7 +81,7 @@ const Experience = () => {
     {
       company: "Edyst",
       position: "Full-Stack Development Intern",
-      period: "Jan 2021 - Jun 2021",
+      period: "May 2019 - Jul 2019",
       location: "Remote",
       jobType: "Internship",
       duration: "3 months",
