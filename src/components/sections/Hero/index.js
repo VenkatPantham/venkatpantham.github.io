@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
-import "./Hero.css";
-import profilePic from "../../../assets/profile.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import "./Hero.css";
+import profileWebp from "../../../assets/profile.webp";
 
 const Hero = () => {
   const [text, setText] = useState("");
@@ -108,14 +108,19 @@ const Hero = () => {
         <div className="hero-image-container">
           <div className="blob-effect"></div>
           <div className="profile-circle">
-            <img
-              src={profilePic}
-              alt="Venkat Pantham"
-              className="profile-img"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
+            <picture>
+              <source srcSet={profileWebp} type="image/webp" />
+              <img
+                src={profileWebp}
+                alt="Venkat Pantham"
+                className="profile-img"
+                width="400"
+                height="400"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </picture>
           </div>
         </div>
       </div>

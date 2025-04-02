@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import profileWebp from "../../assets/profile.webp";
 
 const SEOHelmet = ({ title, description, keywords }) => {
   const siteURL = "https://venkatpantham.github.io/";
@@ -17,6 +18,15 @@ const SEOHelmet = ({ title, description, keywords }) => {
       </title>
       <meta name="description" content={description || defaultDescription} />
       <meta name="keywords" content={keywords || defaultKeywords} />
+
+      {/* Preload LCP image */}
+      <link 
+        rel="preload" 
+        href={profileWebp} 
+        as="image" 
+        type="image/webp"
+        fetchpriority="high"
+      />
 
       {/* OpenGraph Tags */}
       <meta
