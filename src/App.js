@@ -10,6 +10,7 @@ import React, {
 import Header from "./components/layout/Header";
 import Hero from "./components/sections/Hero";
 import SEOHelmet from "./components/SEO/Helmet";
+import Loader from "./components/layout/Loader";
 
 // Lazy load non-critical components
 const Skills = lazy(() => import("./components/sections/Skills"));
@@ -51,7 +52,7 @@ function App() {
           <section id="home">
             <Hero />
           </section>
-          <Suspense fallback={<div style={{ height: "100vh" }} />}>
+          <Suspense fallback={<Loader />}>
             <section id="skills">
               <Skills />
             </section>

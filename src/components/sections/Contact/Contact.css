@@ -398,10 +398,6 @@ social-links-contact a::before {
   .contact-container {
     padding: var(--space-5);
   }
-
-  .social-links-contact {
-    justify-content: flex-start;
-  }
 }
 
 @media screen and (min-width: 1024px) {
