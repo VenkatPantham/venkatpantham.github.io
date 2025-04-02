@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import "./Hero.css";
 import profilePic from "../../../assets/profile.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const Hero = () => {
   const [text, setText] = useState("");
@@ -72,7 +75,7 @@ const Hero = () => {
               download="Venkat_Pantham_Resume.pdf"
               rel="noreferrer"
             >
-              <i className="fas fa-download"></i> Download Resume
+              <FontAwesomeIcon icon={faDownload} /> Download Resume
             </a>
           </div>
           <div className="social-links">
@@ -82,7 +85,7 @@ const Hero = () => {
               rel="noreferrer"
               aria-label="Visit my GitHub profile"
             >
-              <i className="fab fa-github"></i>
+              <FontAwesomeIcon icon={faGithub} />
             </a>
             <a
               href="https://linkedin.com/in/venkat-pantham"
@@ -90,7 +93,7 @@ const Hero = () => {
               rel="noreferrer"
               aria-label="Connect with me on LinkedIn"
             >
-              <i className="fab fa-linkedin"></i>
+              <FontAwesomeIcon icon={faLinkedin} />
             </a>
             <a
               href="mailto:venkatpantham7@gmail.com"
@@ -98,7 +101,7 @@ const Hero = () => {
               rel="noreferrer"
               aria-label="Send me an email"
             >
-              <i className="fas fa-envelope"></i>
+              <FontAwesomeIcon icon={faEnvelope} />
             </a>
           </div>
         </div>

@@ -15,13 +15,6 @@ html {
   font-size: 16px; /* Base font size */
 }
 
-/* Mobile-first responsive font scaling */
-@media screen and (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
-}
-
 body {
   line-height: 1.6;
   background-color: var(--bg-primary);
@@ -39,6 +32,7 @@ body {
   background-attachment: fixed;
   overflow-x: hidden;
   width: 100%;
+  font-size: var(--font-base);
 }
 
 ::selection {
@@ -96,17 +90,19 @@ section > div[id] {
 /* Common components */
 .section-title {
   text-align: center;
-  font-size: 2rem;
+  font-size: var(--font-3xl);
+  font-weight: var(--fw-semibold);
   margin-bottom: var(--space-2);
   position: relative;
   display: inline-block;
   z-index: 1;
+  color: var(--text-primary);
 }
 
 .section-title::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
   width: 60px;
@@ -118,8 +114,9 @@ section > div[id] {
 .section-subtitle {
   text-align: center;
   color: var(--text-secondary);
+  font-size: var(--font-md);
   margin-bottom: var(--space-5);
-  font-size: 1rem;
+  font-weight: var(--fw-normal);
 }
 
 .container {
@@ -331,50 +328,17 @@ main {
 }
 
 /* Responsive styles */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  section {
-    padding: var(--space-7) var(--space-4);
-    scroll-margin-top: calc(var(--header-height) + 20px);
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 14px;
   }
 
   .section-title {
-    font-size: 2.5rem;
-  }
-
-  .section-title::after {
-    width: 80px;
+    font-size: var(--font-xl);
   }
 
   .section-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .btn {
-    font-size: 1rem;
-    padding: var(--space-3) var(--space-5);
-  }
-
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  html {
-    font-size: 18px;
-  }
-
-  section {
-    padding: var(--space-7) var(--space-1);
-    scroll-margin-top: calc(var(--header-height) + 20px);
-  }
-
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .container {
-    padding: 0 var(--space-5);
+    font-size: var(--font-sm);
   }
 }
 
@@ -403,5 +367,60 @@ main {
 
   section > div[id] {
     scroll-margin-top: 120px; /* Increased value for mobile */
+  }
+
+  .section-title {
+    font-size: var(--font-2xl);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-base);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  section {
+    padding: var(--space-7) var(--space-4);
+    scroll-margin-top: calc(var(--header-height) + 20px);
+  }
+
+  .section-title {
+    font-size: var(--font-2xl);
+  }
+
+  .section-title::after {
+    width: 80px;
+  }
+
+  .section-subtitle {
+    font-size: var(--font-md);
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: var(--space-3) var(--space-5);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+
+  section {
+    padding: var(--space-7) var(--space-1);
+    scroll-margin-top: calc(var(--header-height) + 20px);
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .container {
+    padding: 0 var(--space-5);
   }
 }

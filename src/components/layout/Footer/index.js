@@ -1,6 +1,9 @@
 import React from "react";
 import { LazyMotion, domAnimation, m as motion } from "framer-motion";
 import "./Footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -30,7 +33,7 @@ const Footer = () => {
               rel="noreferrer"
               aria-label="Visit my GitHub profile"
             >
-              <i className="fab fa-github"></i>
+              <FontAwesomeIcon icon={faGithub} className="fa-icon" />
             </a>
             <a
               href="https://linkedin.com/in/venkat-pantham"
@@ -38,7 +41,7 @@ const Footer = () => {
               rel="noreferrer"
               aria-label="Connect with me on LinkedIn"
             >
-              <i className="fab fa-linkedin"></i>
+              <FontAwesomeIcon icon={faLinkedin} className="fa-icon" />
             </a>
             <a
               href="mailto:venkatpantham7@gmail.com"
@@ -46,7 +49,7 @@ const Footer = () => {
               rel="noreferrer"
               aria-label="Send me an email"
             >
-              <i className="fas fa-envelope"></i>
+              <FontAwesomeIcon icon={faEnvelope} className="fa-icon" />
             </a>
           </motion.div>
         </LazyMotion>

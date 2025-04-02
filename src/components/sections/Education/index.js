@@ -1,5 +1,13 @@
 import React from "react";
 import { LazyMotion, domAnimation, m as motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCalendarAlt,
+  faCertificate,
+  faChalkboardUser,
+  faCheckCircle,
+  faMedal,
+} from "@fortawesome/free-solid-svg-icons";
 import "./Education.css";
 
 const Education = () => {
@@ -60,21 +68,37 @@ const Education = () => {
           <div key={index} className="education-card">
             <div className="education-header">
               <h3>{edu.school}</h3>
-              <span className="education-period">{edu.period}</span>
+              <span className="education-period">
+                <FontAwesomeIcon icon={faCalendarAlt} className="fa-icon" />
+                {edu.period}
+              </span>
             </div>
 
             <div className="education-body">
               <div className="degree-container">
                 <div className="degree-title">
+                  <FontAwesomeIcon icon={faMedal} className="fa-icon" />
                   <h4>{edu.degree}</h4>
                 </div>
                 {edu.gpa && <span className="gpa">GPA: {edu.gpa}</span>}
               </div>
               <div className="coursework">
-                <h5>Coursework:</h5>
+                <span className="coursework-title">
+                  <FontAwesomeIcon
+                    icon={faChalkboardUser}
+                    className="fa-icon"
+                  />
+                  <h5>Coursework:</h5>
+                </span>
                 <ul>
                   {edu.courses.map((course, i) => (
-                    <li key={i}>{course}</li>
+                    <li key={i}>
+                      <FontAwesomeIcon
+                        icon={faCheckCircle}
+                        className="fa-icon"
+                      />
+                      {course}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -89,7 +113,7 @@ const Education = () => {
           <motion.div className="certification-grid">
             {certifications.map((cert, index) => (
               <div key={index} className="certification-item">
-                <i className={`fas ${cert.icon}`}></i>
+                <FontAwesomeIcon icon={faCertificate} className="fa-icon" />
                 <span>{cert.name}</span>
               </div>
             ))}

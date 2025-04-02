@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import { LazyMotion, domAnimation, m as motion } from "framer-motion";
 import "./Experience.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBriefcase,
+  faMapMarkerAlt,
+  faClock,
+  faTrophy,
+  faChevronDown,
+  faChevronUp,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Experience = () => {
   const [expandedId, setExpandedId] = useState(null);
@@ -126,7 +135,8 @@ const Experience = () => {
                 <div className="timeline-header">
                   <h3>{exp.position}</h3>
                   <div className="job-type-badge">
-                    <i className="fas fa-briefcase"></i> {exp.jobType}
+                    <FontAwesomeIcon icon={faBriefcase} className="fa-icon" />{" "}
+                    {exp.jobType}
                   </div>
 
                   <div className="company-wrapper">
@@ -135,10 +145,15 @@ const Experience = () => {
                     </div>
                     <div className="role-details">
                       <span className="location">
-                        <i className="fas fa-map-marker-alt"></i> {exp.location}
+                        <FontAwesomeIcon
+                          icon={faMapMarkerAlt}
+                          className="fa-icon"
+                        />{" "}
+                        {exp.location}
                       </span>
                       <span className="duration">
-                        <i className="far fa-clock"></i> {exp.duration}
+                        <FontAwesomeIcon icon={faClock} className="fa-icon" />
+                        {exp.duration}
                       </span>
                     </div>
                   </div>
@@ -146,7 +161,7 @@ const Experience = () => {
                   <div className="summary-wrapper">
                     <p className="job-summary">{exp.summary}</p>
                     <div className="achievement-highlight">
-                      <i className="fas fa-trophy"></i>
+                      <FontAwesomeIcon icon={faTrophy} className="fa-icon" />
                       <span>{exp.keyPoint}</span>
                     </div>
 
@@ -171,13 +186,11 @@ const Experience = () => {
                     e.stopPropagation();
                     toggleExpand(index);
                   }}
-                  aria-label={
-                    expandedId === index
-                      ? `Hide details for ${exp.position} at ${exp.company}`
-                      : `Show details for ${exp.position} at ${exp.company}`
-                  }
                 >
-                  <i className="fas fa-chevron-down"></i>
+                  <FontAwesomeIcon
+                    icon={expandedId === index ? faChevronUp : faChevronDown}
+                    className="fa-icon"
+                  />
                 </div>
 
                 <div className="timeline-body">

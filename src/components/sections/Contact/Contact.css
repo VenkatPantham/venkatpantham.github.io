@@ -92,19 +92,18 @@
   height: 100%;
 }
 
-.contact-item i {
-  font-size: 1.5rem;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.contact-item .fa-icon {
+  font-size: 1.3rem;
+  opacity: 85%;
+  color: var(--primary-color);
   min-width: 30px;
   position: relative;
   z-index: 2;
 }
 
 .contact-item h3 {
-  font-size: 1.2rem;
+  font-size: var(--font-md);
+  font-weight: var(--fw-semibold);
   margin-bottom: var(--space-1);
   color: var(--text-primary);
   position: relative;
@@ -112,8 +111,8 @@
 }
 
 .contact-item p {
+  font-size: var(--font-base);
   color: var(--text-secondary);
-  font-size: 0.95rem;
   position: relative;
   z-index: 2;
   transition: var(--transition-normal);
@@ -146,7 +145,7 @@
   border: var(--border-thin);
 }
 
-.social-links-contact a::before {
+social-links-contact a::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -158,7 +157,8 @@
 
 .social-links-contact a:hover {
   transform: translateY(-5px);
-  color: white;
+  opacity: 85%;
+  color: var(--primary-color);
   border-color: transparent;
 }
 
@@ -216,20 +216,20 @@
 }
 
 .form-group label {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: var(--font-base);
+  font-weight: var(--fw-medium);
   color: var(--text-secondary);
   transition: var(--transition-normal);
 }
 
 .form-group input,
 .form-group textarea {
+  font-size: var(--font-base);
   padding: var(--space-3);
   background: var(--bg-input);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
-  font-size: 1rem;
   resize: vertical;
   transition: var(--transition-normal);
   backdrop-filter: blur(5px);
@@ -250,28 +250,26 @@
 }
 
 .error-message {
+  font-size: var(--font-sm);
   color: var(--danger-color);
-  font-size: 0.9rem;
   margin-top: var(--space-2);
   display: flex;
   align-items: center;
   gap: var(--space-2);
 }
 
-.error-message::before {
-  content: "\f071";
-  font-family: "Font Awesome 5 Free";
+.error-message .fa-icon {
   font-weight: 900;
 }
 
 .submit-btn {
+  font-size: var(--font-base);
+  font-weight: var(--fw-medium);
   background: var(--primary-gradient);
   color: white;
   border: none;
   padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-full);
-  font-size: 1rem;
-  font-weight: 500;
   cursor: pointer;
   transition: var(--transition-normal);
   margin-top: var(--space-2);
@@ -284,9 +282,7 @@
   box-shadow: var(--shadow-glow);
 }
 
-.submit-btn::after {
-  content: "\f1d8";
-  font-family: "Font Awesome 5 Free";
+.submit-btn .fa-icon {
   font-weight: 900;
   opacity: 0;
   transform: translateX(-10px);
@@ -298,7 +294,7 @@
   box-shadow: 0 7px 20px var(--shadow-glow);
 }
 
-.submit-btn:hover::after {
+.submit-btn:hover .fa-icon {
   opacity: 1;
   transform: translateX(5px);
 }
@@ -318,7 +314,7 @@
   padding: var(--space-6) 0;
 }
 
-.form-success i {
+.form-success .fa-icon {
   font-size: 4rem;
   color: var(--success-color);
   margin-bottom: var(--space-4);
@@ -341,25 +337,26 @@
 }
 
 .form-success h3 {
-  font-size: 1.5rem;
+  font-size: var(--font-xl);
+  font-weight: var(--fw-semibold);
   margin-bottom: var(--space-3);
   color: white;
 }
 
 .form-success p {
+  font-size: var(--font-base);
   color: var(--text-secondary);
   margin-bottom: var(--space-5);
-  font-size: 1rem;
 }
 
 .send-another-btn {
+  font-size: var(--font-base);
+  font-weight: var(--fw-medium);
   background: transparent;
   color: white;
   border: 1px solid var(--border-hover);
   padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-full);
-  font-size: 1rem;
-  font-weight: 500;
   cursor: pointer;
   transition: var(--transition-normal);
   position: relative;
@@ -427,6 +424,75 @@
     width: 300px;
     height: 300px;
     filter: blur(60px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-item h3 {
+    font-size: var(--font-md);
+  }
+
+  .contact-item p {
+    font-size: var(--font-base);
+  }
+
+  .form-group label {
+    font-size: var(--font-base);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: var(--font-base);
+  }
+
+  .submit-btn {
+    font-size: var(--font-base);
+  }
+
+  .error-message {
+    font-size: var(--font-sm);
+  }
+
+  .form-success h3 {
+    font-size: var(--font-xl);
+  }
+
+  .form-success p {
+    font-size: var(--font-base);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-item h3 {
+    font-size: var(--font-base);
+  }
+
+  .contact-item p,
+  .form-group label,
+  .form-group input,
+  .form-group textarea {
+    font-size: var(--font-sm);
+  }
+
+  .submit-btn {
+    font-size: var(--font-sm);
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .error-message {
+    font-size: var(--font-xs);
+  }
+
+  .form-success h3 {
+    font-size: var(--font-lg);
+  }
+
+  .form-success p {
+    font-size: var(--font-sm);
+  }
+
+  .contact-container {
+    padding: var(--space-4) var(--space-3);
   }
 }
 

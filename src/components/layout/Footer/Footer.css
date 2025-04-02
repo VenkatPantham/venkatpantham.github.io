@@ -95,6 +95,8 @@
   transition: var(--transition-normal);
   display: inline-block;
   position: relative;
+  font-size: var(--font-xl);
+  font-weight: var(--fw-bold);
 }
 
 .footer-logo a:hover {
@@ -149,7 +151,7 @@
 
 .footer-links a {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: var(--font-base);
   transition: var(--transition-normal);
   position: relative;
   padding: var(--space-1) var(--space-2);
@@ -189,7 +191,7 @@
   border-radius: var(--radius-full);
   background: var(--bg-card);
   color: var(--text-secondary);
-  font-size: 1.2rem;
+  font-size: var(--font-lg);
   transition: var(--transition-normal);
   position: relative;
   overflow: hidden;
@@ -219,7 +221,7 @@
 .footer-bottom {
   text-align: center;
   padding-top: var(--space-4);
-  font-size: 0.9rem;
+  font-size: var(--font-sm);
   color: var(--text-secondary);
   max-width: var(--content-width);
   margin: 0 auto;
@@ -258,7 +260,8 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-weight: 600;
+  font-size: var(--font-base);
+  font-weight: var(--fw-semibold);
   transition: var(--transition-normal);
 }
 
@@ -329,6 +332,24 @@
 
   .footer-links {
     padding: var(--space-3) var(--space-5);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-logo a {
+    font-size: var(--font-lg);
+  }
+
+  .footer-links a {
+    font-size: var(--font-sm);
+  }
+
+  .footer-bottom {
+    font-size: var(--font-xs);
+  }
+
+  .footer-bottom .role {
+    font-size: var(--font-sm);
   }
 }
 

@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "../../../App";
 import "./Header.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSun,
+  faMoon,
+  faBars,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,20 +62,15 @@ const NavBar = () => {
           <span className="logo-text">Venkat Pantham</span>
         </a>
 
-        <div
-          className="theme-toggle"
-          onClick={toggleTheme}
-          aria-label="Toggle theme"
-        >
-          {theme === "dark" ? (
-            <i className="fas fa-sun" title="Switch to light mode"></i>
-          ) : (
-            <i className="fas fa-moon" title="Switch to dark mode"></i>
-          )}
+        <div className="theme-toggle" onClick={toggleTheme}>
+          <FontAwesomeIcon
+            icon={theme === "dark" ? faSun : faMoon}
+            className="fa-icon"
+          />
         </div>
 
         <div className="menu-icon" onClick={toggleMenu}>
-          <i className={isMenuOpen ? "fas fa-times" : "fas fa-bars"}></i>
+          <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
         </div>
 
         <ul className={`nav-menu ${isMenuOpen ? "active" : ""}`}>

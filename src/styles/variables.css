@@ -1,23 +1,21 @@
-/* Default (light) theme variables in RGBA */
+/* Default (light) theme variables */
 :root {
-  /* Modern color palette in RGBA */
-  /* Text colors */
+  /* Colors */
   --primary-color: rgba(231, 76, 60, 1); /* #e74c3c */
   --secondary-color: rgba(22, 160, 133, 1); /* #16a085 */
   --accent-color: rgba(241, 196, 15, 1); /* #f1c40f */
-  --bg-primary: rgba(252, 252, 252, 1); /* #fcfcfc */
-  --bg-secondary: rgba(241, 241, 241, 1); /* #f1f1f1 */
-  --text-primary: rgba(26, 26, 26, 1); /* #1a1a1a */
+
+  /* Text colors */
+  --text-primary: rgba(26, 26, 26, 1);
   --text-secondary: rgba(0, 0, 0, 0.7);
 
   /* Background colors */
-  --bg-primary: rgba(248, 249, 250, 1); /* #f8f9fa */
-  --bg-secondary: rgba(233, 236, 239, 1); /* #e9ecef */
+  --bg-primary: rgba(248, 249, 250, 1);
+  --bg-secondary: rgba(241, 241, 241, 1);
   --bg-card: rgba(255, 255, 255, 0.8);
   --bg-card-hover: rgba(255, 255, 255, 0.95);
   --bg-input: rgba(0, 0, 0, 0.05);
   --bg-badge: rgba(0, 0, 0, 0.05);
-  --bg-button: rgba(240, 240, 240, 0.8);
   --bg-header: rgba(248, 249, 250, 0.8);
   --bg-footer: rgba(248, 249, 250, 0.9);
   --bg-menu-mobile: rgba(248, 249, 250, 0.95);
@@ -25,21 +23,20 @@
 
   /* Borders and shadows */
   --border-color: rgba(0, 0, 0, 0.1);
-  --card-border: 1px solid rgba(0, 0, 0, 0.08);
   --border-thin: 1px solid rgba(0, 0, 0, 0.08);
   --border-header: 1px solid rgba(0, 0, 0, 0.05);
   --border-hover: rgba(0, 0, 0, 0.15);
+  --card-border: 1px solid rgba(0, 0, 0, 0.08);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
-  --shadow-glow: 0 0 15px rgba(231, 76, 60, 0.2); /* using primary color glow */
+  --shadow-glow: 0 0 15px rgba(231, 76, 60, 0.2);
 
   /* Overlays and gradients */
   --overlay-light: rgba(0, 0, 0, 0.03);
-  --overlay-primary: rgba(231, 76, 60, 0.1); /* using primary color */
-  --overlay-secondary: rgba(22, 160, 133, 0.1); /* using secondary color */
-  --overlay-accent: rgba(241, 196, 15, 0.1); /* using accent color */
-
+  --overlay-primary: rgba(231, 76, 60, 0.1);
+  --overlay-secondary: rgba(22, 160, 133, 0.1);
+  --overlay-accent: rgba(241, 196, 15, 0.1);
   --primary-gradient: linear-gradient(
     90deg,
     rgba(231, 76, 60, 1),
@@ -58,6 +55,7 @@
   --transition-slow: all 0.5s ease;
 
   /* Spacing */
+  --space-0: 0;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 1rem;
@@ -69,33 +67,55 @@
 
   /* Sizing */
   --content-width: 1200px;
-  --header-height: 70px; /* Smaller for mobile */
+  --header-height: 70px;
 
-  /* Mobile specific */
-  --mobile-section-padding: var(--space-5) var(--space-0);
-  --mobile-font-scale: 0.85;
+  /* Font sizes */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-md: 1.125rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.5rem;
+  --font-2xl: 1.875rem;
+  --font-3xl: 2.25rem;
+  --font-4xl: 3rem;
+  --font-5xl: 3.75rem;
+
+  /* Font weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* Line heights */
+  --lh-none: 1;
+  --lh-tight: 1.25;
+  --lh-snug: 1.375;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.625;
+  --lh-loose: 2;
 }
 
-/* Dark theme variables with RGBA values */
+/* Dark theme variables */
 [data-theme="dark"] {
-  --primary-color: rgba(255, 111, 97, 1); /* #ff6f61 */
-  --secondary-color: rgba(26, 188, 156, 1); /* #1abc9c */
-  --accent-color: rgba(243, 156, 18, 1); /* #f39c12 */
-  --highlight-color: rgba(255, 204, 0, 1); /* #ffcc00 */
-  --dark-color: rgba(16, 24, 32, 1); /* #101820 */
-  --dark-secondary: rgba(25, 35, 45, 1); /* #19232d */
-  --light-color: rgba(236, 240, 241, 1); /* #ecf0f1 */
-  --text-primary: rgba(245, 245, 245, 1); /* #f5f5f5 */
+  /* Colors */
+  --primary-color: rgba(255, 111, 97, 1);
+  --secondary-color: rgba(26, 188, 156, 1);
+  --accent-color: rgba(243, 156, 18, 1);
+
+  /* Text colors */
+  --text-primary: rgba(245, 245, 245, 1);
   --text-secondary: rgba(255, 255, 255, 0.7);
 
   /* Background colors */
-  --bg-primary: rgba(18, 18, 18, 1); /* #121212 */
-  --bg-secondary: rgba(30, 30, 30, 1); /* #1e1e1e */
+  --bg-primary: rgba(18, 18, 18, 1);
+  --bg-secondary: rgba(30, 30, 30, 1);
   --bg-card: rgba(30, 30, 30, 0.7);
   --bg-card-hover: rgba(35, 35, 35, 0.7);
   --bg-input: rgba(255, 255, 255, 0.05);
   --bg-badge: rgba(255, 255, 255, 0.05);
-  --bg-button: rgba(30, 30, 30, 0.5);
   --bg-header: rgba(18, 18, 18, 0.8);
   --bg-footer: rgba(18, 18, 18, 0.9);
   --bg-menu-mobile: rgba(18, 18, 18, 0.95);
@@ -103,33 +123,28 @@
 
   /* Borders and shadows */
   --border-color: rgba(255, 255, 255, 0.1);
-  --card-border: 1px solid rgba(255, 255, 255, 0.08);
   --border-thin: 1px solid rgba(255, 255, 255, 0.08);
   --border-header: 1px solid rgba(255, 255, 255, 0.05);
   --border-hover: rgba(255, 255, 255, 0.15);
+  --card-border: 1px solid rgba(255, 255, 255, 0.08);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
   --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 15px rgba(255, 111, 97, 0.3);
 
-  /* Updated overlays using the dark palette */
+  /* Overlays */
   --overlay-light: rgba(255, 255, 255, 0.05);
-  --overlay-primary: rgba(255, 111, 97, 0.15); /* using primary color */
-  --overlay-secondary: rgba(26, 188, 156, 0.15); /* using secondary color */
-  --overlay-accent: rgba(243, 156, 18, 0.15); /* using accent color */
+  --overlay-primary: rgba(255, 111, 97, 0.15);
+  --overlay-secondary: rgba(26, 188, 156, 0.15);
+  --overlay-accent: rgba(243, 156, 18, 0.15);
   --primary-gradient: linear-gradient(
     90deg,
     rgba(255, 111, 97, 1),
     rgba(255, 204, 0, 1)
   );
-
-  /* Text colors */
-  --text-primary: rgba(244, 244, 244, 1); /* #f4f4f4 */
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --text-muted: rgba(255, 255, 255, 0.5);
 }
 
-/* Responsive adjustments for variables */
+/* Responsive adjustments */
 @media (min-width: 768px) {
   :root {
     --header-height: 80px;

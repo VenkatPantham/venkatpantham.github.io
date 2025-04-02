@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import { LazyMotion, domAnimation } from "framer-motion";
 import "./Contact.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faMapMarkerAlt,
+  faPhoneAlt,
+  faCheckCircle,
+  faPaperPlane,
+  faExclamationTriangle,
+} from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -58,7 +68,7 @@ const Contact = () => {
       <div className="contact-content">
         <div className="contact-info">
           <div className="contact-item">
-            <i className="fas fa-envelope"></i>
+            <FontAwesomeIcon icon={faEnvelope} className="fa-icon" />
             <div>
               <h3>Email</h3>
               <p>venkatpantham7@gmail.com</p>
@@ -66,7 +76,7 @@ const Contact = () => {
           </div>
 
           <div className="contact-item">
-            <i className="fas fa-map-marker-alt"></i>
+            <FontAwesomeIcon icon={faMapMarkerAlt} className="fa-icon" />
             <div>
               <h3>Location</h3>
               <p>Baltimore, Maryland</p>
@@ -74,7 +84,7 @@ const Contact = () => {
           </div>
 
           <div className="contact-item">
-            <i className="fas fa-phone-alt"></i>
+            <FontAwesomeIcon icon={faPhoneAlt} className="fa-icon" />
             <div>
               <h3>Phone</h3>
               <p>+1 (202) 656-4229</p>
@@ -88,7 +98,7 @@ const Contact = () => {
               rel="noreferrer"
               aria-label="Visit my GitHub profile"
             >
-              <i className="fab fa-github"></i>
+              <FontAwesomeIcon icon={faGithub} className="fa-icon" />
             </a>
             <a
               href="https://linkedin.com/in/venkat-pantham"
@@ -96,7 +106,7 @@ const Contact = () => {
               rel="noreferrer"
               aria-label="Connect with me on LinkedIn"
             >
-              <i className="fab fa-linkedin"></i>
+              <FontAwesomeIcon icon={faLinkedin} className="fa-icon" />
             </a>
             <a
               href="mailto:venkatpantham7@gmail.com"
@@ -104,7 +114,7 @@ const Contact = () => {
               rel="noreferrer"
               aria-label="Send me an email"
             >
-              <i className="fas fa-envelope"></i>
+              <FontAwesomeIcon icon={faEnvelope} className="fa-icon" />
             </a>
           </div>
         </div>
@@ -113,7 +123,7 @@ const Contact = () => {
           <div className="contact-form-container">
             {submitted ? (
               <div className="form-success">
-                <i className="fas fa-check-circle"></i>
+                <FontAwesomeIcon icon={faCheckCircle} className="fa-icon" />
                 <h3>Message Sent!</h3>
                 <p>
                   Thank you for reaching out. I'll get back to you as soon as
@@ -175,10 +185,21 @@ const Contact = () => {
                   ></textarea>
                 </div>
 
-                {error && <div className="error-message">{error}</div>}
+                {error && (
+                  <div className="error-message">
+                    <FontAwesomeIcon
+                      icon={faExclamationTriangle}
+                      className="fa-icon"
+                    />
+                    {error}
+                  </div>
+                )}
 
                 <button type="submit" className="submit-btn" disabled={loading}>
                   {loading ? "Sending..." : "Send Message"}
+                  <span className="submit-icon">
+                    <FontAwesomeIcon icon={faPaperPlane} className="fa-icon" />
+                  </span>
                 </button>
               </form>
             )}
