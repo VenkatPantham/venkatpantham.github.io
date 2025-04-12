@@ -240,7 +240,7 @@
   border-color: var(--border-hover);
 }
 
-.project-link i {
+.project-link .fa-icon {
   font-size: 0.9rem;
   color: var(--text-primary);
 }

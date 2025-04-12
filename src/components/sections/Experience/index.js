@@ -48,7 +48,7 @@ const Experience = () => {
     {
       company: "Aspire InfoLabs",
       position: "Software Engineer",
-      period: "Oct 2020 - Aug 2023",
+      period: "Dec 2019 - Aug 2023",
       location: "Hyderabad, India",
       jobType: "Full-time",
       duration: "3 years",

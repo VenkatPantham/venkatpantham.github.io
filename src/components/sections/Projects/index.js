@@ -5,6 +5,9 @@ import {
   m as motion,
   AnimatePresence,
 } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 import "./Projects.css";
 
 const Projects = () => {
@@ -23,8 +26,8 @@ const Projects = () => {
         "AWS S3",
         "AES Encryption",
       ],
-      github: "https://github.com/venkatpantham/xrdaas",
-      demo: "https://xrdaas-demo.example.com",
+      github: "https://github.com/VenkatPantham/xr-daas",
+      demo: null,
     },
     {
       id: 2,
@@ -40,11 +43,26 @@ const Projects = () => {
         "Data Science",
         "ML",
       ],
-      github: "https://github.com/venkatpantham/maryland-crime-analysis",
-      demo: "https://maryland-crime-analysis.example.com",
+      github: "https://github.com/VenkatPantham/SAFE-MD",
+      demo: null,
     },
     {
       id: 3,
+      title: "Tech News Curator",
+      description:
+        "A Python application that curates tech news from various sources, summarizes articles using OpenAI, and delivers them as markdown files or email digests. Features include multi-source scraping, AI-powered summarization, flexible output options, robust error handling, and comprehensive logging. Configurable via environment variables for tailored usage.",
+      technologies: [
+        "Python",
+        "OpenAI",
+        "Web Scraping",
+        "Markdown",
+        "Email Automation",
+      ],
+      github: "https://github.com/VenkatPantham/tech-news-curator",
+      demo: null,
+    },
+    {
+      id: 4,
       title: "Food Ordering Platform",
       description:
         "Developed a scalable MERN stack food-ordering platform for 1,000+ users, supporting 20 API endpoints. Optimized database queries for reduced load times and accelerated data handling speed for faster and more reliable order management. Deployed the front-end on Netlify and back-end on AWS.",
@@ -56,8 +74,8 @@ const Projects = () => {
         "AWS",
         "Netlify",
       ],
-      github: "https://github.com/venkatpantham/food-ordering",
-      demo: "https://food-ordering-platform.example.com",
+      github: null,
+      demo: null,
     },
   ];
 
@@ -83,7 +101,7 @@ const Projects = () => {
                       </div>
                     ))}
                   </div>
-                  {/* <div className="project-links">
+                  <div className="project-links">
                     {project.github && (
                       <a
                         href={project.github}
@@ -91,7 +109,8 @@ const Projects = () => {
                         rel="noreferrer"
                         className="project-link"
                       >
-                        <i className="fab fa-github"></i> Code
+                        <FontAwesomeIcon icon={faGithub} className="fa-icon" />
+                        Code
                       </a>
                     )}
                     {project.demo && (
@@ -101,10 +120,11 @@ const Projects = () => {
                         rel="noreferrer"
                         className="project-link"
                       >
-                        <i className="fas fa-external-link-alt"></i> Demo
+                        <FontAwesomeIcon icon={faLink} className="fa-icon" />
+                        Demo
                       </a>
                     )}
-                  </div> */}
+                  </div>
                 </div>
               </motion.div>
             ))}
