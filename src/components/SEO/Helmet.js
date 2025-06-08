@@ -39,7 +39,7 @@ const SEOHelmet = ({ title, description, keywords }) => {
       />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={siteURL} />
-      <meta property="og:image" content={`${siteURL}/og-image.png`} />
+      <meta property="og:image" content={`${siteURL}/og-image.jpg`} />
 
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -51,7 +51,7 @@ const SEOHelmet = ({ title, description, keywords }) => {
         name="twitter:description"
         content={description || defaultDescription}
       />
-      <meta name="twitter:image" content={`${siteURL}/og-image.png`} />
+      <meta name="twitter:image" content={`${siteURL}/og-image.jpg`} />
 
       {/* Other Important Meta Tags */}
       <meta name="author" content="Venkat Pantham" />
