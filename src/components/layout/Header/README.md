@@ -1,6 +1,6 @@
-# NavBar Component
+# Header Component
 
-The NavBar component provides the site's main navigation.
+The Header component provides the site's main navigation.
 
 ## Features
 
@@ -12,12 +12,12 @@ The NavBar component provides the site's main navigation.
 ## Usage
 
 ```jsx
-import NavBar from "./components/layout/NavBar";
+import Header from "./components/layout/Header";
 
 function App() {
   return (
     <div>
-      <NavBar />
+      <Header />
       {/* Other components */}
     </div>
   );
