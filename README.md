@@ -82,6 +82,7 @@ This site can be easily deployed to platforms like:
 - Netlify
 - Vercel
 - GitHub Pages
+The GitHub Actions workflow `.github/workflows/deploy.yml` automates deployment to GitHub Pages.
 
 ## Custom Configuration
 
