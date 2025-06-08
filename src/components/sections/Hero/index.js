@@ -12,7 +12,14 @@ const Hero = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const titles = useMemo(
-    () => ["Software Engineer", "Full Stack Developer"],
+    () => [
+      "Software Engineer",
+      "Full Stack Developer",
+      "Java Developer",
+      "Frontend Developer",
+      "React Developer",
+      "Backend Developer",
+    ],
     []
   );
   const period = 2000; // How long to pause after typing
