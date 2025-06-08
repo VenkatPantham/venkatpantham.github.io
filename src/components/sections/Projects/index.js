@@ -106,7 +106,7 @@ const Projects = () => {
                       <a
                         href={project.github}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="project-link"
                       >
                         <FontAwesomeIcon icon={faGithub} className="fa-icon" />
@@ -117,7 +117,7 @@ const Projects = () => {
                       <a
                         href={project.demo}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="project-link"
                       >
                         <FontAwesomeIcon icon={faLink} className="fa-icon" />

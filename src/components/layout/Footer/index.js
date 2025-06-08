@@ -28,7 +28,7 @@ const Footer = () => {
             <a
               href="https://github.com/venkatpantham"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Visit my GitHub profile"
             >
               <FontAwesomeIcon icon={faGithub} className="fa-icon" />
@@ -36,7 +36,7 @@ const Footer = () => {
             <a
               href="https://linkedin.com/in/venkat-pantham"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Connect with me on LinkedIn"
             >
               <FontAwesomeIcon icon={faLinkedin} className="fa-icon" />
@@ -44,7 +44,7 @@ const Footer = () => {
             <a
               href="mailto:venkatpantham7@gmail.com"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Send me an email"
             >
               <FontAwesomeIcon icon={faEnvelope} className="fa-icon" />
