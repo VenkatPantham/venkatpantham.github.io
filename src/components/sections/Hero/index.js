@@ -73,7 +73,7 @@ const Hero = () => {
               href={`${process.env.PUBLIC_URL}/resume.pdf`}
               className="btn secondary-btn"
               download="Venkat_Pantham_Resume.pdf"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faDownload} /> Download Resume
             </a>
@@ -82,7 +82,7 @@ const Hero = () => {
             <a
               href="https://github.com/venkatpantham"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Visit my GitHub profile"
             >
               <FontAwesomeIcon icon={faGithub} />
@@ -90,7 +90,7 @@ const Hero = () => {
             <a
               href="https://linkedin.com/in/venkat-pantham"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Connect with me on LinkedIn"
             >
               <FontAwesomeIcon icon={faLinkedin} />
@@ -98,7 +98,7 @@ const Hero = () => {
             <a
               href="mailto:venkatpantham7@gmail.com"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="Send me an email"
             >
               <FontAwesomeIcon icon={faEnvelope} />
