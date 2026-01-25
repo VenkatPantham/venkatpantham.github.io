@@ -22,7 +22,7 @@ const Footer = lazy(() => import("./components/layout/Footer"));
 
 // Create theme context
 export const ThemeContext = createContext({
-  theme: "light",
+  theme: "dark",
   toggleTheme: () => {},
 });
 
@@ -30,7 +30,7 @@ export const ThemeContext = createContext({
 export const useTheme = () => useContext(ThemeContext);
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   // Theme toggle function
   const toggleTheme = () => {
