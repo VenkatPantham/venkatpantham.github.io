@@ -27,7 +27,7 @@ const Education = () => {
     {
       school: "Jawaharlal Nehru Technological University, Kakinada",
       degree: "Bachelor's, Computer Science",
-      period: "Aug 2016 - May 2020",
+      period: "Jun 2016 - Aug 2020",
       courses: [
         "C, C++, Java, Python, R and Linux Programming",
         "Data Structures",

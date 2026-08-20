@@ -16,33 +16,94 @@ const Experience = () => {
 
   const experiences = [
     {
+      company: "Amazon Web Services (AWS)",
+      position: "Software Development Engineer",
+      period: "Aug 2025 - Present",
+      location: "Greater Seattle Area",
+      jobType: "Full-time",
+      duration: "1 year+",
+      summary:
+        "Building and operating managed database features on the Amazon RDS for SQL Server team, supporting reliability, availability, and performance at scale.",
+      keyPoint:
+        "Contributing to a managed database service that powers mission-critical workloads for enterprise customers worldwide.",
+      achievements: [
+        "Contributed to the SQL Server audit log publishing to Amazon CloudWatch feature",
+        "Delivering engine-level features for Amazon RDS for SQL Server",
+        "Driving operational excellence through on-call and monitoring",
+      ],
+      responsibilities: [
+        "Contributed to the feature enabling SQL Server audit logs to be published to Amazon CloudWatch, giving customers centralized visibility into database activity for security and compliance.",
+        "Developing and maintaining features for Amazon RDS for SQL Server, focusing on database engine reliability, availability, and performance for workloads running at scale.",
+        "Automating provisioning, patching, backup, and failover workflows to reduce operational overhead and improve the managed database experience.",
+        "Participating in the on-call rotation to diagnose and resolve production issues, strengthening monitoring, alarming, and observability across the service.",
+        "Contributing to internal AI initiatives, applying generative AI and automation to improve developer productivity and operational workflows.",
+        "Collaborating with cross-functional AWS teams through design reviews and code reviews, following AWS's operational excellence and security best practices.",
+      ],
+      technologies: [
+        "AWS",
+        "Amazon RDS",
+        "SQL Server",
+        "Java",
+        "C#",
+        "Distributed Systems",
+        "Databases",
+      ],
+    },
+    {
+      company: "MatrixIntelligence",
+      position: "Software Development Engineer",
+      period: "Jun 2025 - Aug 2025",
+      location: "United States",
+      jobType: "Full-time",
+      duration: "3 months",
+      summary:
+        "Returned full-time to advance the geospatial routing platform, optimizing routing algorithms and deepening ArcGIS-based route intelligence.",
+      keyPoint:
+        "Reduced routing calculation time by 40% and improved network efficiency by 20%.",
+      achievements: [
+        "Reduced routing calculation time by 40%",
+        "Improved overall network efficiency by 20%",
+        "Cut manual interventions by 35% via ArcGIS integration",
+      ],
+      responsibilities: [
+        "Crafted advanced routing algorithms with efficient data structures, reducing calculation time by 40% and improving overall network efficiency by 20% for faster, more accurate path selection.",
+        "Deepened ArcGIS integration to incorporate real-time geographic data into route optimization, enabling precise route decisions and reducing manual interventions by 35%.",
+      ],
+      technologies: [
+        "Spring Boot",
+        "React",
+        "ArcGIS",
+        "Java",
+        "Algorithms",
+        "PostgreSQL",
+      ],
+    },
+    {
       company: "Matrix Intelligence",
       position: "Software Development Engineer Intern",
-      period: "Jun 2023 - Aug 2023",
+      period: "Jun 2024 - Aug 2024",
       location: "Santa Clara, CA",
       jobType: "Internship",
       duration: "3 months",
       summary:
-        "Enhanced system responsiveness, routing efficiency, and secure geospatial data handling with ArcGIS integration.",
+        "Built the foundation of the geospatial routing platform, delivering a modern UI and scalable Spring Boot endpoints for fiber route calculations.",
       keyPoint:
-        "Improved system responsiveness by 35%. Enhanced routing accuracy and efficiency.",
+        "Improved task completion speed by 25% and system responsiveness by 30%.",
       achievements: [
-        "Reduced processing time by 30%",
-        "Increased stakeholder engagement by 25%",
+        "Improved task completion speed by 25%",
+        "Increased system responsiveness by 30%",
       ],
       responsibilities: [
-        "Increased system responsiveness by 35% by implementing scalable Spring Boot endpoints and adding ArcGIS support, strengthening geospatial data handling, enabling real-time location tracking, and allowing faster map rendering.",
-        "Optimized routing calculation time by crafting advanced algorithms with efficient data structures, which minimized processing delays and refined path selection for real-time navigation and enhanced traffic analysis for accurate routing decisions.",
-        "Boosted operational efficiency by 30% by launching a new UI featuring ArcGIS integration and OAuth-secured access, improving user interactions, ensuring secure authentication for data access, and simplifying role-based permissions.",
+        "Designed a modern UI using React, Redux, and Material UI, significantly enhancing user interaction and operational efficiency and improving task completion speed by 25%.",
+        "Introduced over 10 optimized Spring Boot endpoints to streamline multi-layer fiber route calculations, increasing system responsiveness by 30% and reducing latency.",
       ],
       technologies: [
-        "Spring Boot",
-        "ArcGIS",
         "React",
-        "OAuth",
-        "PostgreSQL",
+        "Redux",
+        "Material UI",
+        "Spring Boot",
         "Java",
-        "GeoServer",
+        "PostgreSQL",
       ],
     },
     {

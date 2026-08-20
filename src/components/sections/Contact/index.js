@@ -142,7 +142,7 @@ const Contact = () => {
               <FontAwesomeIcon icon={faMapMarkerAlt} className="fa-icon" />
               <div>
                 <h3>Location</h3>
-                <p>Baltimore, Maryland</p>
+                <p>Greater Seattle Area</p>
               </div>
             </motion.div>
 
